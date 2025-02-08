@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
     public GameObject slime;
     public GameObject player;
+
+    public Player playerScript;
+
     public bool moveTowardsPlayer;
     public float movementSpeed;
 
@@ -14,9 +19,11 @@ public class EnemyScript : MonoBehaviour
     public float currentHealth;
     public float attackStat;
     public float defenceStat;
+    public float element;
+
     public float attackCooldownTimer;
-    public float attackCooldown;
-    public bool element;
+    public float attackCooldownTime;
+    public bool attackCooldownMode;
 
     // States
     bool attackMode;
@@ -25,14 +32,12 @@ public class EnemyScript : MonoBehaviour
 
     private float enemeyOffSet = 1.0f;
 
-    public Vector3 pointB;
-
-
     // Start is called before the first frame update
     void Start()
     {
         slime = gameObject;
         player = GameObject.FindWithTag("Player");
+        playerScript = GameObject.FindWithTag("Player").GetComponentInChildren<Player>(); // Will have to come back to this if destroying the player object is required.
         moveTowardsPlayer = true;
     }
 
@@ -68,8 +73,24 @@ public class EnemyScript : MonoBehaviour
 
     public void Attack()
     {
-        
+        attackCooldownTimer += Time.deltaTime;
+        if (attackCooldownTimer < 1 && attackCooldownMode == false)
+        {
+            playerScript.ReceivePlayerDamage(attackStat);
+            attackCooldownMode = true;
+        }
+
+        if (attackCooldownTimer >= attackCooldownTime)
+        {
+            attackCooldownTimer = 0;
+            attackCooldownMode = false;
+        }
     }
+
+    //IEnumerator Damage()
+    //{
+
+    //}
 
     //Non-Working Code
     //IEnumerator MoveIn()
