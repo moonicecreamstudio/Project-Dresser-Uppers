@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 864032107629557847}
   - component: {fileID: 384754681297762501}
   m_Layer: 0
-  m_Name: RedSlime
+  m_Name: BlueSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,12 +53,12 @@ MonoBehaviour:
   startingHealth: 5
   currentHealth: 5
   baseDefenceStat: 0
-  fireDefenceStat: 5
-  waterDefenceStat: 0
+  fireDefenceStat: 0
+  waterDefenceStat: 5
   grassDefenceStat: 0
   baseAttackStat: 0
-  fireAttackStat: 5
-  waterAttackStat: 0
+  fireAttackStat: 0
+  waterAttackStat: 5
   grassAttackStat: 0
   attackCooldownTimer: 0
   attackCooldownTime: 5
@@ -138,7 +138,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2129750259, guid: 28a468d148b53184ab9313cba0973737, type: 3}
+  m_Sprite: {fileID: -538150512, guid: 20ad29e60c6606e4caa4ae6dcfcd9f53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

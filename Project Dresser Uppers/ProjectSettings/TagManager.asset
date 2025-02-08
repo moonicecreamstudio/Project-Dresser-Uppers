@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TopCanvas
+  - 3DTop
+  - 3DBottom
   layers:
   - Default
   - TransparentFX

@@ -17,9 +17,17 @@ public class EnemyScript : MonoBehaviour
     // Stat variable of an enemy
     public float startingHealth;
     public float currentHealth;
-    public float attackStat;
-    public float defenceStat;
-    public float element;
+    public float baseDefenceStat;
+
+    public float fireDefenceStat;
+    public float waterDefenceStat;
+    public float grassDefenceStat;
+
+    public float baseAttackStat;
+
+    public float fireAttackStat;
+    public float waterAttackStat;
+    public float grassAttackStat;
 
     public float attackCooldownTimer;
     public float attackCooldownTime;
@@ -76,7 +84,7 @@ public class EnemyScript : MonoBehaviour
         attackCooldownTimer += Time.deltaTime;
         if (attackCooldownTimer < 1 && attackCooldownMode == false)
         {
-            playerScript.ReceivePlayerDamage(attackStat);
+            playerScript.ReceivePlayerDamage(baseAttackStat, fireAttackStat, waterAttackStat, grassAttackStat);
             attackCooldownMode = true;
         }
 
