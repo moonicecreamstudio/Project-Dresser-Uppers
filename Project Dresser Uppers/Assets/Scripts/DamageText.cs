@@ -19,7 +19,7 @@ public class DamageText : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         playerScript = GameObject.FindWithTag("Player").GetComponentInChildren<Player>();
-        damage.text = playerScript.receivedDamage.ToString();
+        damage.text = playerScript.receivedTotalDamage.ToString();
         topCanvas = GameObject.FindWithTag("TopCanvas");
         damage.transform.SetParent(topCanvas.transform, false);
         damage.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1.0f, damage.transform.position.z);

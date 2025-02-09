@@ -7,6 +7,8 @@ TagManager:
   - TopCanvas
   - 3DTop
   - 3DBottom
+  - 2DTop
+  - 2DBottom
   layers:
   - Default
   - TransparentFX
