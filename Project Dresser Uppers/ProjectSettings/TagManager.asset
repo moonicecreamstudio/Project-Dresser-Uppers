@@ -10,6 +10,7 @@ TagManager:
   - 2DTop
   - 2DBottom
   - PlayerHealthBar
+  - InventoryManager
   layers:
   - Default
   - TransparentFX

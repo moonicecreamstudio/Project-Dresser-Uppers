@@ -48,6 +48,13 @@ MonoBehaviour:
   slime: {fileID: 0}
   player: {fileID: 0}
   playerScript: {fileID: 0}
+  materialDrop:
+  - item: {fileID: 11400000, guid: 2b9bb0a613a224b40a8c6725ef83ede6, type: 2}
+    chance: 50
+  - item: {fileID: 11400000, guid: c2ba265f56f518b4c81334775890726b, type: 2}
+    chance: 25
+  - item: {fileID: 11400000, guid: aa04005fb19dfb24ab2e86c7d95320b4, type: 2}
+    chance: 5
   moveTowardsPlayer: 0
   movementSpeed: 5
   startingHealth: 25
@@ -63,6 +70,7 @@ MonoBehaviour:
   attackCooldownTimer: 0
   attackCooldownTime: 5
   attackCooldownMode: 0
+  receivedTotalDamage: 0
   hurtCooldownTimer: 0
   hurtCooldownTime: 5
   hurtCooldownMode: 0

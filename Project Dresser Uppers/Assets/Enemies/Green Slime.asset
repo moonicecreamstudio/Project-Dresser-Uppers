@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a627ad574e532664b9d594513cf9204a, type: 3}
+  m_Name: Green Slime
+  m_EditorClassIdentifier: 
+  enemyType: 2
+  image: {fileID: 448292256, guid: aec78a72149f4d64b80d8f4198700957, type: 3}
+  startingHealth: 0
+  baseDefenceStat: 0
+  fireDefenceStat: 0
+  waterDefenceStat: 0
+  grassDefenceStat: 0
+  baseAttackStat: 0
+  fireAttackStat: 0
+  waterAttackStat: 0
+  grassAttackStat: 0
+  item1: {fileID: 11400000, guid: 2b9bb0a613a224b40a8c6725ef83ede6, type: 2}
+  chance1: 50
+  item2: {fileID: 11400000, guid: aa04005fb19dfb24ab2e86c7d95320b4, type: 2}
+  chance2: 25
+  item3: {fileID: 11400000, guid: c2ba265f56f518b4c81334775890726b, type: 2}
+  chance3: 5
+  item4: {fileID: 0}
+  chance4: 0
+  item5: {fileID: 0}
+  chance5: 0

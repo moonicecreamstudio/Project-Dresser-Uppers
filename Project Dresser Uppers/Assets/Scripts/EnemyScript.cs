@@ -12,10 +12,26 @@ public class EnemyScript : MonoBehaviour
 
     public Player playerScript;
 
+
+    [System.Serializable]
+    public class MaterialDrop
+    {
+        public Item item;
+        public float chance;
+    }
+
+    public MaterialDrop[] materialDrop;
+
+    public InventoryManager inventoryManager;
+
+    [Header("Movement")]
+
     public bool moveTowardsPlayer;
     public float movementSpeed;
+    private float enemeyOffSet = 2.0f;
 
-    // Stat variable of an enemy
+    [Header("Parameters")]
+
     public float startingHealth;
     public float currentHealth;
     public float baseDefenceStat;
@@ -30,6 +46,8 @@ public class EnemyScript : MonoBehaviour
     public float waterAttackStat;
     public float grassAttackStat;
 
+    [Header("States")]
+
     public float attackCooldownTimer;
     public float attackCooldownTime;
     public bool attackCooldownMode;
@@ -40,12 +58,11 @@ public class EnemyScript : MonoBehaviour
     public float hurtCooldownTime;
     public bool hurtCooldownMode;
 
-    // States
     bool attackMode;
     bool moveIn;
     bool moveOut;
 
-    private float enemeyOffSet = 2.0f;
+    [Header("UI")]
 
     private Vector3 damageTextSpawnPosition;
     public GameObject damageText;
@@ -58,6 +75,7 @@ public class EnemyScript : MonoBehaviour
         playerScript = GameObject.FindWithTag("Player").GetComponentInChildren<Player>(); // Will have to come back to this if destroying the player object is required.
         moveTowardsPlayer = true;
         playerScript.currentEnemies += 1;
+        inventoryManager = GameObject.FindWithTag("InventoryManager").GetComponentInChildren<InventoryManager>();
     }
 
     // Update is called once per frame
@@ -99,7 +117,6 @@ public class EnemyScript : MonoBehaviour
         {
             ReceiveDamageFromPlayer(playerScript.baseAttackStat);
             hurtCooldownMode = true;
-            Debug.Log("ouchie");
         }
 
         if (hurtCooldownTimer >= hurtCooldownTime)
@@ -178,6 +195,60 @@ public class EnemyScript : MonoBehaviour
 
     public void Death()
     {
+        float itemRoll = Random.Range(1, 101);
+
+        if (materialDrop.Length > 0 && materialDrop[0] != null)
+        {
+            if (itemRoll > 0 && itemRoll <= materialDrop[0].chance)
+            {
+                Debug.Log("Material 1 get");
+
+                bool result = inventoryManager.AddItem(materialDrop[0].item);
+                if (result == true)
+                {
+                    Debug.Log("Item added");
+                }
+                else
+                {
+                    Debug.Log("Item not added");
+                }
+            }
+        }
+        if (materialDrop.Length > 1 && materialDrop[1] != null)
+        {
+            if (itemRoll > materialDrop[0].chance && itemRoll <= materialDrop[0].chance + materialDrop[1].chance)
+            {
+                Debug.Log("Material 2 get");
+
+                bool result = inventoryManager.AddItem(materialDrop[1].item);
+                if (result == true)
+                {
+                    Debug.Log("Item added");
+                }
+                else
+                {
+                    Debug.Log("Item not added");
+                }
+            }
+        }
+        if (materialDrop.Length > 2 && materialDrop[2] != null)
+        {
+            if (itemRoll > materialDrop[0].chance + materialDrop[1].chance && itemRoll <= materialDrop[0].chance + materialDrop[1].chance + materialDrop[2].chance)
+            {
+                Debug.Log("Material 3 get");
+
+                bool result = inventoryManager.AddItem(materialDrop[2].item);
+                if (result == true)
+                {
+                    Debug.Log("Item added");
+                }
+                else
+                {
+                    Debug.Log("Item not added");
+                }
+            }
+        }
+
         playerScript.currentEnemies -= 1;
         Destroy(gameObject);
     }
