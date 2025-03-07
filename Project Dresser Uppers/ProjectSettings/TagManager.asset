@@ -9,6 +9,7 @@ TagManager:
   - 3DBottom
   - 2DTop
   - 2DBottom
+  - PlayerHealthBar
   layers:
   - Default
   - TransparentFX

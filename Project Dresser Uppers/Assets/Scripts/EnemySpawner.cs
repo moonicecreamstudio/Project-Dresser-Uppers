@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject blueSlime;
     public GameObject greenSlime;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +24,20 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnRedSlime()
     {
-        Instantiate(redSlime, new Vector3(11, Random.Range(41.8f,42.5f),15), transform.rotation);
+        float[] variables = new float[3] { 14.25f, 15f, 15.75f};
+        float result = variables[Random.Range(0, variables.Length)];
+        Instantiate(redSlime, new Vector3(11, 42.2f, result), transform.rotation);
     }
     public void SpawnBlueSlime()
     {
-        Instantiate(blueSlime, new Vector3(11, Random.Range(41.8f, 42.5f), 15), transform.rotation);
+        float[] variables = new float[3] { 14.25f, 15f, 15.75f };
+        float result = variables[Random.Range(0, variables.Length)];
+        Instantiate(blueSlime, new Vector3(11, 42.2f, result), transform.rotation);
     }
     public void SpawnGreenSlime()
     {
-        Instantiate(greenSlime, new Vector3(11, Random.Range(41.8f, 42.5f), 15), transform.rotation);
+        float[] variables = new float[3] { 14.25f, 15f, 15.75f };
+        float result = variables[Random.Range(0, variables.Length)];
+        Instantiate(greenSlime, new Vector3(11, 42.2f, result), transform.rotation);
     }
 }

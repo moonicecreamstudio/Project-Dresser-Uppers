@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,12 +34,21 @@ public class EnemyScript : MonoBehaviour
     public float attackCooldownTime;
     public bool attackCooldownMode;
 
+    public float receivedTotalDamage;
+
+    public float hurtCooldownTimer;
+    public float hurtCooldownTime;
+    public bool hurtCooldownMode;
+
     // States
     bool attackMode;
     bool moveIn;
     bool moveOut;
 
-    private float enemeyOffSet = 1.0f;
+    private float enemeyOffSet = 2.0f;
+
+    private Vector3 damageTextSpawnPosition;
+    public GameObject damageText;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +57,7 @@ public class EnemyScript : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerScript = GameObject.FindWithTag("Player").GetComponentInChildren<Player>(); // Will have to come back to this if destroying the player object is required.
         moveTowardsPlayer = true;
+        playerScript.currentEnemies += 1;
     }
 
     // Update is called once per frame
@@ -70,6 +81,7 @@ public class EnemyScript : MonoBehaviour
         if (attackMode == true)
         {
             Attack();
+            ReceiveDamage();
         }
 
         if (moveTowardsPlayer == true)
@@ -79,6 +91,23 @@ public class EnemyScript : MonoBehaviour
 
     }
 
+
+    public void ReceiveDamage()
+    {
+        hurtCooldownTimer += Time.deltaTime;
+        if (hurtCooldownTimer < 1 && hurtCooldownMode == false)
+        {
+            ReceiveDamageFromPlayer(playerScript.baseAttackStat);
+            hurtCooldownMode = true;
+            Debug.Log("ouchie");
+        }
+
+        if (hurtCooldownTimer >= hurtCooldownTime)
+        {
+            hurtCooldownTimer = 0;
+            hurtCooldownMode = false;
+        }
+    }
     public void Attack()
     {
         attackCooldownTimer += Time.deltaTime;
@@ -93,6 +122,14 @@ public class EnemyScript : MonoBehaviour
             attackCooldownTimer = 0;
             attackCooldownMode = false;
         }
+    }
+
+    public void ReceiveDamageFromPlayer(float baseDamage)
+    {
+        damageTextSpawnPosition = new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z);
+        receivedTotalDamage = baseDamage;
+        currentHealth -= receivedTotalDamage;
+        Instantiate(damageText, damageTextSpawnPosition, transform.rotation, this.transform);
     }
 
     //IEnumerator Damage()
@@ -141,6 +178,7 @@ public class EnemyScript : MonoBehaviour
 
     public void Death()
     {
+        playerScript.currentEnemies -= 1;
         Destroy(gameObject);
     }
 }

@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public bool isFighting;
+    public int currentEnemies;
+
     public float maxHealth;
     public float currentHealth;
 
@@ -39,6 +42,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isFighting = false;
+        currentEnemies = 0;
+
         equippedTopStats[0] = 0;
         equippedTopStats[1] = 0;
         equippedTopStats[2] = 0;
@@ -63,6 +69,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isFighting);
+        if (currentEnemies > 0)
+        {
+            isFighting = true;
+        }
+        else if (currentEnemies <= 0)
+        {
+            isFighting = false;
+        }
+
         // Stats
 
         // Defence
@@ -71,7 +87,8 @@ public class Player : MonoBehaviour
         grassDefenceStat = equippedTopStats[4] + equippedBottomStats[4];
 
 
-        // Attack calculation
+        // Attack
+
     }
 
     public void ReceivePlayerDamage(float baseDamage, float fireDamage, float waterDamage, float grassDamage)
@@ -110,5 +127,6 @@ public class Player : MonoBehaviour
 
         // healthUI.PlayerHealthChange(); // Adding this line of code makes the enemy hit the player every frame...? Why is that?
     }
+
 
 }

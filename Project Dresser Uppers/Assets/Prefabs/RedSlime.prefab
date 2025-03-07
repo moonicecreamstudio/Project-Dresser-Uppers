@@ -50,8 +50,8 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   moveTowardsPlayer: 0
   movementSpeed: 5
-  startingHealth: 5
-  currentHealth: 5
+  startingHealth: 25
+  currentHealth: 25
   baseDefenceStat: 0
   fireDefenceStat: 5
   waterDefenceStat: 0
@@ -63,6 +63,10 @@ MonoBehaviour:
   attackCooldownTimer: 0
   attackCooldownTime: 5
   attackCooldownMode: 0
+  hurtCooldownTimer: 0
+  hurtCooldownTime: 5
+  hurtCooldownMode: 0
+  damageText: {fileID: 3319043166368308000, guid: 4868cc585f6fc7c49b01a13739df2fd3, type: 3}
 --- !u!1 &9129942169789404550
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,8 +109,8 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9129942169789404550}
   m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -117,7 +121,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8631a3abc34ed1642b904c62ec4d7651, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
