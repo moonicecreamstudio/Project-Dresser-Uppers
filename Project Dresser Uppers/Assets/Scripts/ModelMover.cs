@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
-public class UIWindowMover : MonoBehaviour
+public class ModelMover : MonoBehaviour
 {
     public AnimationCurve curve;
-    public RectTransform window;
-    public Vector2 startPosition;
-    public Vector2 goalPosition;
+    public Transform objectToMove;
+    public Vector3 startPosition;
+    public Vector3 goalPosition;
     public float speed;
     private float current, target;
 
     // Start is called before the first frame update
     void Start()
     {
-        window = GetComponent<RectTransform>();
-        //var myValue = Mathf.Lerp(0, 10, 0.5f);
+        objectToMove = GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -23,9 +23,8 @@ public class UIWindowMover : MonoBehaviour
     {
         current = Mathf.MoveTowards(current, target, speed * Time.deltaTime);
 
-        window.anchoredPosition = Vector2.Lerp(startPosition, goalPosition, curve.Evaluate(current));
+        transform.position = Vector3.Lerp(startPosition, goalPosition, curve.Evaluate(current));
     }
-
     public void buttonPressed()
     {
         target = target == 0 ? 1 : 0;
