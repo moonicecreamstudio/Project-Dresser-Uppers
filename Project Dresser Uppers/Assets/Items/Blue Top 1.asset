@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70dec6a07f665b74d8310492b5f39991, type: 3}
+  m_Name: Blue Top 1
+  m_EditorClassIdentifier: 
+  itemType: 1
+  baseDefenceStat: 0
+  fireDefenceStat: 0
+  waterDefenceStat: 10
+  grassDefenceStat: 0
+  baseAttackStat: 0
+  fireAttackStat: 0
+  waterAttackStat: 0
+  grassAttackStat: 0
+  stackable: 0
+  image: {fileID: 21300000, guid: 67b747a7c8f194242a81b5bd201e8b2c, type: 3}

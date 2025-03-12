@@ -743,7 +743,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Spawn Slime String
+  m_text: 'Spawn Top
 
 '
   m_isRightToLeft: 0
@@ -3599,9 +3599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Spawn Slime Bubble
-
-'
+  m_text: Spawn Bottom
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4686,7 +4684,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12213,7 +12211,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12290,6 +12288,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2b9bb0a613a224b40a8c6725ef83ede6, type: 2}
   - {fileID: 11400000, guid: c2ba265f56f518b4c81334775890726b, type: 2}
   - {fileID: 11400000, guid: aa04005fb19dfb24ab2e86c7d95320b4, type: 2}
+  - {fileID: 11400000, guid: 2535501520072f34987ad4a6ad43ac8f, type: 2}
+  - {fileID: 11400000, guid: cacc16111cdd44241b48ce91578e35ef, type: 2}
 --- !u!4 &1756138470
 Transform:
   m_ObjectHideFlags: 0

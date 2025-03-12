@@ -9,6 +9,16 @@ public class Item : ScriptableObject
     [Header("Only gameplay")]
     public ItemType itemType;
 
+    public float baseDefenceStat;
+    public float fireDefenceStat;
+    public float waterDefenceStat;
+    public float grassDefenceStat;
+
+    public float baseAttackStat;
+    public float fireAttackStat;
+    public float waterAttackStat;
+    public float grassAttackStat;
+
     [Header("Only UI")]
     public bool stackable = true;
 
@@ -19,7 +29,8 @@ public class Item : ScriptableObject
 public enum ItemType
 {
     Crafting,
-    Upgrade,
-    Consumable
+    Top,
+    Bottom,
+    Weapon
 }
 
