@@ -8,11 +8,13 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public LevelProgression levelProgression;
     public bool isFighting;
     public int currentEnemies;
 
     public float maxHealth;
     public float currentHealth;
+    bool hasDied;
 
     public float baseDefenceStat;
 
@@ -49,6 +51,17 @@ public class Player : MonoBehaviour
     public TMPro.TextMeshProUGUI fireAttackText;
     public TMPro.TextMeshProUGUI waterAttackText;
     public TMPro.TextMeshProUGUI grassAttackText;
+
+    [System.Serializable]
+
+    public struct KillEventData
+    {
+        public float enemiesAlive;
+        public float timePassedInSeconds;
+        // items in inventory
+        // equipment equipped
+        // total EXP
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -110,6 +123,16 @@ public class Player : MonoBehaviour
 
         // Attack
 
+        // Health
+
+        if (currentHealth <= 0)
+        {
+            if (hasDied == false)
+            {
+                PlayerDeath();
+                hasDied = true;
+            }
+        }
     }
 
     public void ReceivePlayerDamage(float baseDamage, float fireDamage, float waterDamage, float grassDamage)
@@ -149,5 +172,15 @@ public class Player : MonoBehaviour
         // healthUI.PlayerHealthChange(); // Adding this line of code makes the enemy hit the player every frame...? Why is that?
     }
 
-
+    public void PlayerDeath()
+    {
+        var data = new KillEventData()
+        {
+            enemiesAlive = currentEnemies,
+            timePassedInSeconds = levelProgression.timer
+        };
+        
+        TelemetryLogger.Log(this, "Player Death", data);
+        Debug.Log("You died.");
+    }
 }

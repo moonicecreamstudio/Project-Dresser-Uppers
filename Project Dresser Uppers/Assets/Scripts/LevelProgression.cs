@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LevelProgression : MonoBehaviour
 {
     public Slider progress;
-    float timer;
+    public float timer;
 
     public Player playerScript;
 

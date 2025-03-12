@@ -46,6 +46,8 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         parentAfterDrag = transform.parent;
         parentBeforeDrag = transform.parent;
         transform.SetParent(transform.root);
+
+        TelemetryLogger.Log(this, "Click: On Item", new Vector2(Input.mousePosition.x, Input.mousePosition.y));
     }
 
     public void OnDrag(PointerEventData eventData)

@@ -13,7 +13,7 @@ public class EnemyScript : MonoBehaviour
     public Player playerScript;
 
 
-    [System.Serializable]
+    [System.Serializable] // Make sure when youre using it, the engine holds on to it
     public class MaterialDrop
     {
         public Item item;
