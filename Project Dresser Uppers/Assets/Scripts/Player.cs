@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,6 +40,16 @@ public class Player : MonoBehaviour
     public GameObject receivedDamageText;
     public PlayerHealthUI healthUI;
 
+    public TMPro.TextMeshProUGUI baseDefenceText;
+    public TMPro.TextMeshProUGUI fireDefenceText;
+    public TMPro.TextMeshProUGUI waterDefenceText;
+    public TMPro.TextMeshProUGUI grassDefenceText;
+
+    public TMPro.TextMeshProUGUI baseAttackText;
+    public TMPro.TextMeshProUGUI fireAttackText;
+    public TMPro.TextMeshProUGUI waterAttackText;
+    public TMPro.TextMeshProUGUI grassAttackText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +80,16 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        baseDefenceText.text = baseDefenceStat.ToString();
+        fireDefenceText.text = fireDefenceStat.ToString();
+        waterDefenceText.text = waterDefenceStat.ToString();
+        grassDefenceText.text = grassDefenceStat.ToString();
+
+        baseAttackText.text = baseAttackStat.ToString();
+        fireAttackText.text = fireAttackStat.ToString();
+        waterAttackText.text = waterAttackStat.ToString();
+        grassAttackText.text = grassAttackStat.ToString();
+
         Debug.Log(isFighting);
         if (currentEnemies > 0)
         {
