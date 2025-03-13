@@ -12,6 +12,7 @@ TagManager:
   - PlayerHealthBar
   - InventoryManager
   - Enemy
+  - EnemyEndTarget
   layers:
   - Default
   - TransparentFX

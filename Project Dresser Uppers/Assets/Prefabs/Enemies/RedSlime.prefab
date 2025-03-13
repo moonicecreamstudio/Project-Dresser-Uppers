@@ -48,6 +48,7 @@ MonoBehaviour:
   slime: {fileID: 0}
   player: {fileID: 0}
   playerScript: {fileID: 0}
+  endTarget: {fileID: 0}
   materialDrop:
   - item: {fileID: 11400000, guid: 48ea9eca5538415438b7f03999ec5a0f, type: 2}
     chance: 50
@@ -62,19 +63,23 @@ MonoBehaviour:
   currentHealth: 25
   baseDefenceStat: 0
   fireDefenceStat: 5
-  waterDefenceStat: 0
+  waterDefenceStat: -5
   grassDefenceStat: 0
   baseAttackStat: 0
-  fireAttackStat: 5
+  fireAttackStat: 1
   waterAttackStat: 0
   grassAttackStat: 0
   attackCooldownTimer: 0
   attackCooldownTime: 5
   attackCooldownMode: 0
-  receivedTotalDamage: 0
   hurtCooldownTimer: 0
   hurtCooldownTime: 5
   hurtCooldownMode: 0
+  receivedDamage: 0
+  receivedFireDamage: 0
+  receivedWaterDamage: 0
+  receivedGrassDamage: 0
+  receivedTotalDamage: 0
   damageText: {fileID: 3319043166368308000, guid: 4868cc585f6fc7c49b01a13739df2fd3, type: 3}
 --- !u!1 &9129942169789404550
 GameObject:

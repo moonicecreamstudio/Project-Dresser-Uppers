@@ -52,6 +52,7 @@ public class OutfitManager : MonoBehaviour
         }
         else
         {
+            //playerScript.equippedTopStats[0] = itemInTopSlot.maxHealth;
             playerScript.equippedTopStats[1] = itemInTopSlot.baseDefenceStat;
             playerScript.equippedTopStats[2] = itemInTopSlot.fireDefenceStat;
             playerScript.equippedTopStats[3] = itemInTopSlot.waterDefenceStat;
@@ -80,6 +81,7 @@ public class OutfitManager : MonoBehaviour
         }
         else
         {
+            //playerScript.equippedBottomStats[0] = itemInBottomSlot.maxHealth;
             playerScript.equippedBottomStats[1] = itemInBottomSlot.baseDefenceStat;
             playerScript.equippedBottomStats[2] = itemInBottomSlot.fireDefenceStat;
             playerScript.equippedBottomStats[3] = itemInBottomSlot.waterDefenceStat;
@@ -90,6 +92,35 @@ public class OutfitManager : MonoBehaviour
             playerScript.equippedBottomStats[8] = itemInBottomSlot.grassAttackStat;
             bottom3D.GetComponent<MeshRenderer>().material = itemInBottomSlot.material;
             bottom2D.GetComponent<SpriteRenderer>().sprite = itemInBottomSlot.display2DOutfit;
+        }
+
+        if (itemInWeaponSlot == null)
+        {
+            playerScript.equippedWeaponStats[0] = 0;
+            playerScript.equippedWeaponStats[1] = 0;
+            playerScript.equippedWeaponStats[2] = 0;
+            playerScript.equippedWeaponStats[3] = 0;
+            playerScript.equippedWeaponStats[4] = 0;
+            playerScript.equippedWeaponStats[5] = 0;
+            playerScript.equippedWeaponStats[6] = 0;
+            playerScript.equippedWeaponStats[7] = 0;
+            playerScript.equippedWeaponStats[8] = 0;
+            //weapon3D.GetComponent<MeshRenderer>().material = blank;
+            //weapon2D.GetComponent<SpriteRenderer>().sprite = null;
+        }
+        else
+        {
+            //playerScript.equippedWeaponStats[0] = itemInWeaponSlot.maxHealth;
+            playerScript.equippedWeaponStats[1] = itemInWeaponSlot.baseDefenceStat;
+            playerScript.equippedWeaponStats[2] = itemInWeaponSlot.fireDefenceStat;
+            playerScript.equippedWeaponStats[3] = itemInWeaponSlot.waterDefenceStat;
+            playerScript.equippedWeaponStats[4] = itemInWeaponSlot.grassDefenceStat;
+            playerScript.equippedWeaponStats[5] = itemInWeaponSlot.baseAttackStat;
+            playerScript.equippedWeaponStats[6] = itemInWeaponSlot.fireAttackStat;
+            playerScript.equippedWeaponStats[7] = itemInWeaponSlot.waterAttackStat;
+            playerScript.equippedWeaponStats[8] = itemInWeaponSlot.grassAttackStat;
+            //weapon3D.GetComponent<MeshRenderer>().material = itemInWeaponSlot.material;
+            //weapon2D.GetComponent<SpriteRenderer>().sprite = itemInWeaponSlot.display2DOutfit;
         }
     }
 }

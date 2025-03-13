@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
     public List<float> equippedTopStats = new List<float>();
     public List<float> equippedBottomStats = new List<float>();
+    public List<float> equippedWeaponStats = new List<float>();
     //private float[] equippedBottomStats = new float[9];
     //public float[] equippedTopStats = {0, 0, 0, 0, 0, 0, 0, 0, 0}; 
     //public float[] equippedBottomStats = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -88,6 +89,16 @@ public class Player : MonoBehaviour
         equippedBottomStats[6] = 0; // fireAttack
         equippedBottomStats[7] = 0; // waterAttack
         equippedBottomStats[8] = 0; // grassAttack
+
+        equippedWeaponStats[0] = 0; // health
+        equippedWeaponStats[1] = 0; // baseDefence
+        equippedWeaponStats[2] = 0; // fireDefence
+        equippedWeaponStats[3] = 0; // waterDefence
+        equippedWeaponStats[4] = 0; // grassDefence
+        equippedWeaponStats[5] = 0; // baseAttack
+        equippedWeaponStats[6] = 0; // fireAttack
+        equippedWeaponStats[7] = 0; // waterAttack
+        equippedWeaponStats[8] = 0; // grassAttack
     }
 
     // Update is called once per frame
@@ -116,12 +127,17 @@ public class Player : MonoBehaviour
         // Stats
 
         // Defence
-        fireDefenceStat = equippedTopStats[2] + equippedBottomStats[2];
-        waterDefenceStat = equippedTopStats[3] + equippedBottomStats[3];
-        grassDefenceStat = equippedTopStats[4] + equippedBottomStats[4];
+        baseDefenceStat = equippedTopStats[1] + equippedBottomStats[1] + equippedWeaponStats[1];
+        fireDefenceStat = equippedTopStats[2] + equippedBottomStats[2] + equippedWeaponStats[2];
+        waterDefenceStat = equippedTopStats[3] + equippedBottomStats[3] + equippedWeaponStats[3];
+        grassDefenceStat = equippedTopStats[4] + equippedBottomStats[4] + equippedWeaponStats[4];
 
 
         // Attack
+        baseAttackStat = equippedTopStats[5] + equippedBottomStats[5] + equippedWeaponStats[5];
+        fireAttackStat = equippedTopStats[6] + equippedBottomStats[6] + equippedWeaponStats[6];
+        waterAttackStat = equippedTopStats[7] + equippedBottomStats[7] + equippedWeaponStats[7];
+        grassAttackStat = equippedTopStats[8] + equippedBottomStats[8] + equippedWeaponStats[8];
 
         // Health
 
@@ -135,7 +151,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ReceivePlayerDamage(float baseDamage, float fireDamage, float waterDamage, float grassDamage)
+    public void ReceiveEnemyDamage(float baseDamage, float fireDamage, float waterDamage, float grassDamage)
     {
         receivedDamage = baseDamage - baseDefenceStat;
         if (receivedDamage < 0) // Stops players from getting healed from attacks lower than the defence value of the player

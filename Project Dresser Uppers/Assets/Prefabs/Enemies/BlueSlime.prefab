@@ -48,6 +48,7 @@ MonoBehaviour:
   slime: {fileID: 0}
   player: {fileID: 0}
   playerScript: {fileID: 0}
+  endTarget: {fileID: 0}
   materialDrop:
   - item: {fileID: 11400000, guid: 83b177e4afb93a74d800209aff580f74, type: 2}
     chance: 50
@@ -66,7 +67,7 @@ MonoBehaviour:
   grassDefenceStat: 0
   baseAttackStat: 0
   fireAttackStat: 0
-  waterAttackStat: 5
+  waterAttackStat: 1
   grassAttackStat: 0
   attackCooldownTimer: 0
   attackCooldownTime: 5

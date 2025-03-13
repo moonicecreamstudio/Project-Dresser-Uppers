@@ -11,7 +11,7 @@ public class EnemyScript : MonoBehaviour
     public GameObject player;
 
     public Player playerScript;
-
+    public Transform endTarget;
 
     [System.Serializable] // Make sure when youre using it, the engine holds on to it
     public class MaterialDrop
@@ -28,7 +28,7 @@ public class EnemyScript : MonoBehaviour
 
     public bool moveTowardsPlayer;
     public float movementSpeed;
-    private float enemeyOffSet = 2.0f;
+    //private float enemeyOffSet = 2.0f;
 
     [Header("Parameters")]
 
@@ -52,7 +52,6 @@ public class EnemyScript : MonoBehaviour
     public float attackCooldownTime;
     public bool attackCooldownMode;
 
-    public float receivedTotalDamage;
 
     public float hurtCooldownTimer;
     public float hurtCooldownTime;
@@ -62,10 +61,19 @@ public class EnemyScript : MonoBehaviour
     bool moveIn;
     bool moveOut;
 
+    public float receivedDamage;
+    public float receivedFireDamage;
+    public float receivedWaterDamage;
+    public float receivedGrassDamage;
+    public float receivedTotalDamage;
+
     [Header("UI")]
 
     private Vector3 damageTextSpawnPosition;
     public GameObject damageText;
+
+    float endX;
+    float endZ;
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +84,10 @@ public class EnemyScript : MonoBehaviour
         moveTowardsPlayer = true;
         playerScript.currentEnemies += 1;
         inventoryManager = GameObject.FindWithTag("InventoryManager").GetComponentInChildren<InventoryManager>();
+        endTarget = GameObject.FindWithTag("EnemyEndTarget").GetComponentInChildren<Transform>();
+
+        endX = endTarget.position.x + Random.Range(-2.25f, 2.25f);
+        endZ = endTarget.position.z + Random.Range(-2f, 2f);
     }
 
     // Update is called once per frame
@@ -86,7 +98,7 @@ public class EnemyScript : MonoBehaviour
             Death();
         }
 
-        if (transform.position.x <= player.transform.position.x + enemeyOffSet)
+        if (transform.position.x <= endX)
         {
             attackMode = true;
             moveTowardsPlayer = false;
@@ -115,7 +127,7 @@ public class EnemyScript : MonoBehaviour
         hurtCooldownTimer += Time.deltaTime;
         if (hurtCooldownTimer < 1 && hurtCooldownMode == false)
         {
-            ReceiveDamageFromPlayer(playerScript.baseAttackStat);
+            ReceivePlayerDamage(playerScript.baseAttackStat, playerScript.fireAttackStat, playerScript.waterAttackStat, playerScript.grassAttackStat);
             hurtCooldownMode = true;
         }
 
@@ -130,7 +142,7 @@ public class EnemyScript : MonoBehaviour
         attackCooldownTimer += Time.deltaTime;
         if (attackCooldownTimer < 1 && attackCooldownMode == false)
         {
-            playerScript.ReceivePlayerDamage(baseAttackStat, fireAttackStat, waterAttackStat, grassAttackStat);
+            playerScript.ReceiveEnemyDamage(baseAttackStat, fireAttackStat, waterAttackStat, grassAttackStat);
             attackCooldownMode = true;
         }
 
@@ -141,10 +153,35 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    public void ReceiveDamageFromPlayer(float baseDamage)
+    public void ReceivePlayerDamage(float baseDamage, float fireDamage, float waterDamage, float grassDamage)
     {
         damageTextSpawnPosition = new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z);
-        receivedTotalDamage = baseDamage;
+
+        receivedDamage = baseDamage - baseDefenceStat;
+        if (receivedDamage < 0) // Stops enemies from getting healed from attacks lower than the defence value of the player
+        {
+            receivedDamage = 0;
+        }
+        receivedFireDamage = fireDamage - fireDefenceStat;
+        if (receivedFireDamage < 0)
+        {
+            receivedFireDamage = 0;
+        }
+
+        receivedWaterDamage = waterDamage - waterDefenceStat;
+        if (receivedWaterDamage < 0)
+        {
+            receivedWaterDamage = 0;
+        }
+
+        receivedGrassDamage = grassDamage - grassDefenceStat;
+        if (receivedGrassDamage < 0)
+        {
+            receivedGrassDamage = 0;
+        }
+
+        receivedTotalDamage = receivedDamage + receivedFireDamage + receivedWaterDamage + receivedGrassDamage;
+
         currentHealth -= receivedTotalDamage;
         Instantiate(damageText, damageTextSpawnPosition, transform.rotation, this.transform);
     }
@@ -183,9 +220,11 @@ public class EnemyScript : MonoBehaviour
 
     public void Movement()
     {
-        if (transform.position.x >= player.transform.position.x + 1.0f)
+
+        if (transform.position.x >= endX)
         {
-            transform.Translate(Vector3.right * -movementSpeed * Time.deltaTime);
+            var step = movementSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3 (endX, transform.position.y, endZ), step);
         }
         else
         {
