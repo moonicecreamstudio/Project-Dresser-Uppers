@@ -9499,6 +9499,7 @@ MonoBehaviour:
   bottom3D: {fileID: 0}
   top2D: {fileID: 0}
   bottom2D: {fileID: 0}
+  playerScript: {fileID: 0}
   blank: {fileID: 2100000, guid: abedbf60a0c8c92439220cb36a83a695, type: 2}
   topSlot: {fileID: 1624633411}
   bottomSlot: {fileID: 64237084}
@@ -11842,7 +11843,7 @@ GameObject:
   - component: {fileID: 1733704212}
   - component: {fileID: 1733704211}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
