@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour, IDropHandler
+public class MaterialSlot : MonoBehaviour, IDropHandler
 {
     public enum AllowedItemType
     {
@@ -16,7 +16,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     }
 
     public AllowedItemType allowedItemType;
-
     public void OnDrop(PointerEventData eventData)
     {
         if (transform.childCount == 0)
@@ -53,18 +52,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         {
             InventoryItem itemInSlot = transform.GetComponentInChildren<InventoryItem>();
             InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
-            InventorySlot previousInventorySlot = inventoryItem.parentBeforeDrag.GetComponentInParent<InventorySlot>();
-
-            Debug.Log(previousInventorySlot.allowedItemType);
 
             if (allowedItemType == AllowedItemType.All)
             {
-                if (previousInventorySlot.allowedItemType == AllowedItemType.Top && itemInSlot.itemType == ItemType.Top) // Checks if the previous slot matches
-                {
-                    itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
-                    inventoryItem.parentAfterDrag = transform;
-                }
-
+                itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
+                inventoryItem.parentAfterDrag = transform;
             }
 
             if (allowedItemType == AllowedItemType.Top && inventoryItem.itemType == ItemType.Top)
