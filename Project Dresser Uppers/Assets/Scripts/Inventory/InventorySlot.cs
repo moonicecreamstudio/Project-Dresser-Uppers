@@ -47,6 +47,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             {
                 inventoryItem.parentAfterDrag = transform;
             }
+
+            if (allowedItemType == AllowedItemType.Crafting && inventoryItem.itemType == ItemType.Crafting)
+            {
+                inventoryItem.parentAfterDrag = transform;
+            }
         }
 
         if (transform.childCount == 1) // Swap positions of the objects
@@ -59,12 +64,31 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
             if (allowedItemType == AllowedItemType.All)
             {
-                if (previousInventorySlot.allowedItemType == AllowedItemType.Top && itemInSlot.itemType == ItemType.Top) // Checks if the previous slot matches
+                if (previousInventorySlot.allowedItemType == AllowedItemType.Top && itemInSlot.itemType == ItemType.Top) // Checks if the previous slot matches "Top"
                 {
                     itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
                     inventoryItem.parentAfterDrag = transform;
                 }
-
+                if (previousInventorySlot.allowedItemType == AllowedItemType.Bottom && itemInSlot.itemType == ItemType.Bottom) // Checks if the previous slot matches "Bottom"
+                {
+                    itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
+                    inventoryItem.parentAfterDrag = transform;
+                }
+                if (previousInventorySlot.allowedItemType == AllowedItemType.Weapon && itemInSlot.itemType == ItemType.Weapon) // Checks if the previous slot matches "Weapon"
+                {
+                    itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
+                    inventoryItem.parentAfterDrag = transform;
+                }
+                if (previousInventorySlot.allowedItemType == AllowedItemType.All) // If the previous item slot was set to "All"
+                {
+                    itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
+                    inventoryItem.parentAfterDrag = transform;
+                }
+                if (previousInventorySlot.allowedItemType == AllowedItemType.Trash) // If the previous item slot was set to "Trash"
+                {
+                    itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
+                    inventoryItem.parentAfterDrag = transform;
+                }
             }
 
             if (allowedItemType == AllowedItemType.Top && inventoryItem.itemType == ItemType.Top)
