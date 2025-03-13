@@ -69,25 +69,25 @@ public class Player : MonoBehaviour
         isFighting = false;
         currentEnemies = 0;
 
-        equippedTopStats[0] = 0;
-        equippedTopStats[1] = 0;
-        equippedTopStats[2] = 0;
-        equippedTopStats[3] = 0;
-        equippedTopStats[4] = 0;
-        equippedTopStats[5] = 0;
-        equippedTopStats[6] = 0;
-        equippedTopStats[7] = 0;
-        equippedTopStats[8] = 0;
+        equippedTopStats[0] = 0; // health
+        equippedTopStats[1] = 0; // baseDefence
+        equippedTopStats[2] = 0; // fireDefence
+        equippedTopStats[3] = 0; // waterDefence
+        equippedTopStats[4] = 0; // grassDefence
+        equippedTopStats[5] = 0; // baseAttack
+        equippedTopStats[6] = 0; // fireAttack
+        equippedTopStats[7] = 0; // waterAttack
+        equippedTopStats[8] = 0; // grassAttack
 
-        equippedBottomStats[0] = 0;
-        equippedBottomStats[1] = 0;
-        equippedBottomStats[2] = 0;
-        equippedBottomStats[3] = 0;
-        equippedBottomStats[4] = 0;
-        equippedBottomStats[5] = 0;
-        equippedBottomStats[6] = 0;
-        equippedBottomStats[7] = 0;
-        equippedBottomStats[8] = 0;
+        equippedBottomStats[0] = 0; // health
+        equippedBottomStats[1] = 0; // baseDefence
+        equippedBottomStats[2] = 0; // fireDefence
+        equippedBottomStats[3] = 0; // waterDefence
+        equippedBottomStats[4] = 0; // grassDefence
+        equippedBottomStats[5] = 0; // baseAttack
+        equippedBottomStats[6] = 0; // fireAttack
+        equippedBottomStats[7] = 0; // waterAttack
+        equippedBottomStats[8] = 0; // grassAttack
     }
 
     // Update is called once per frame

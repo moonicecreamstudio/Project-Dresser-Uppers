@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 864032107629557847}
   - component: {fileID: 384754681297762501}
   m_Layer: 0
-  m_Name: RedSlime
-  m_TagString: Untagged
+  m_Name: GreenSlime
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,11 +49,11 @@ MonoBehaviour:
   player: {fileID: 0}
   playerScript: {fileID: 0}
   materialDrop:
-  - item: {fileID: 11400000, guid: 48ea9eca5538415438b7f03999ec5a0f, type: 2}
+  - item: {fileID: 11400000, guid: 2b9bb0a613a224b40a8c6725ef83ede6, type: 2}
     chance: 50
-  - item: {fileID: 11400000, guid: 2c1582deefa722244a0221a5b3e770d5, type: 2}
+  - item: {fileID: 11400000, guid: c2ba265f56f518b4c81334775890726b, type: 2}
     chance: 25
-  - item: {fileID: 11400000, guid: 12fdfce7dbee22c419877e5c9f5e9632, type: 2}
+  - item: {fileID: 11400000, guid: aa04005fb19dfb24ab2e86c7d95320b4, type: 2}
     chance: 5
   inventoryManager: {fileID: 0}
   moveTowardsPlayer: 0
@@ -61,13 +61,13 @@ MonoBehaviour:
   startingHealth: 25
   currentHealth: 25
   baseDefenceStat: 0
-  fireDefenceStat: 5
+  fireDefenceStat: 0
   waterDefenceStat: 0
-  grassDefenceStat: 0
+  grassDefenceStat: 5
   baseAttackStat: 0
-  fireAttackStat: 5
+  fireAttackStat: 0
   waterAttackStat: 0
-  grassAttackStat: 0
+  grassAttackStat: 5
   attackCooldownTimer: 0
   attackCooldownTime: 5
   attackCooldownMode: 0
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2129750259, guid: 28a468d148b53184ab9313cba0973737, type: 3}
+  m_Sprite: {fileID: 448292256, guid: aec78a72149f4d64b80d8f4198700957, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

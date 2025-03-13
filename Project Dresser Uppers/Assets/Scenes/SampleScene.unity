@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.54901963, g: 0.7254902, b: 0.98039216, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -363,6 +363,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62386382}
   m_CullTransparentMesh: 1
+--- !u!1 &64237084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8738111065607424730, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
+  m_PrefabInstance: {fileID: 323349125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &65580151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8738111065607424730, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
+  m_PrefabInstance: {fileID: 1542070252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &76196381
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,9 +753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Spawn Top
-
-'
+  m_text: Blue Squishy Liquid
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1525,6 +1533,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 26636192}
     m_Modifications:
+    - target: {fileID: 2680216675222309100, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
+      propertyPath: allowedItemType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5123594628916906973, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
       propertyPath: m_Color.b
       value: 0.7735849
@@ -1773,9 +1785,9 @@ RectTransform:
   - {fileID: 1282234282}
   - {fileID: 98162399}
   - {fileID: 411907846}
-  - {fileID: 1021315828}
   - {fileID: 241646141}
   - {fileID: 1975119595}
+  - {fileID: 1021315828}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2135,14 +2147,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1465240591}
-        m_TargetAssemblyTypeName: OutfitManager, Assembly-CSharp
-        m_MethodName: BlueTop
-        m_Mode: 1
+      - m_Target: {fileID: 1756138469}
+        m_TargetAssemblyTypeName: DebugSpawnItem, Assembly-CSharp
+        m_MethodName: PickupItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2268,14 +2280,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1465240591}
-        m_TargetAssemblyTypeName: OutfitManager, Assembly-CSharp
-        m_MethodName: BlueBottom
-        m_Mode: 1
+      - m_Target: {fileID: 1756138469}
+        m_TargetAssemblyTypeName: DebugSpawnItem, Assembly-CSharp
+        m_MethodName: PickupItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3044,14 +3056,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1465240591}
-        m_TargetAssemblyTypeName: OutfitManager, Assembly-CSharp
-        m_MethodName: RedBottom
-        m_Mode: 1
+      - m_Target: {fileID: 1756138469}
+        m_TargetAssemblyTypeName: DebugSpawnItem, Assembly-CSharp
+        m_MethodName: PickupItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3601,7 +3613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Spawn Bottom
+  m_text: Green Squishy Liquid
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3710,10 +3722,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1200643912}
-  - {fileID: 419726755}
-  - {fileID: 1730606723}
   - {fileID: 673287916}
+  - {fileID: 419726755}
   - {fileID: 428836385}
+  - {fileID: 1730606723}
   - {fileID: 2051405293}
   - {fileID: 1707272987}
   - {fileID: 911292778}
@@ -4686,7 +4698,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4704,7 +4716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.54901963, g: 0.7254902, b: 0.98039216, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5506,7 +5518,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   window: {fileID: 1021315828}
   startPosition: {x: 0, y: -646}
-  goalPosition: {x: 0, y: -363}
+  goalPosition: {x: 0, y: -120}
   speed: 2
 --- !u!1 &1040589254
 GameObject:
@@ -5616,7 +5628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.63529414, g: 0.93333334, b: 0.58431375, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7158,14 +7170,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1465240591}
-        m_TargetAssemblyTypeName: OutfitManager, Assembly-CSharp
-        m_MethodName: RedTop
-        m_Mode: 1
+      - m_Target: {fileID: 1756138469}
+        m_TargetAssemblyTypeName: DebugSpawnItem, Assembly-CSharp
+        m_MethodName: PickupItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9487,15 +9499,10 @@ MonoBehaviour:
   bottom3D: {fileID: 0}
   top2D: {fileID: 0}
   bottom2D: {fileID: 0}
-  red: {fileID: 2100000, guid: 13ed6c87184c04b4e807f6c10e138ce1, type: 2}
-  blue: {fileID: 2100000, guid: 726ac815fa91b5a45a4f1cb03d848748, type: 2}
-  green: {fileID: 2100000, guid: 24c6ed1c9174f654396d5cbe4f8580a4, type: 2}
-  redTop: {fileID: 21300000, guid: d40d759d21a2bcc49b1ca727837109f0, type: 3}
-  redBottom: {fileID: 21300000, guid: a886d33083301f5429cfab59c3a3a2b5, type: 3}
-  blueTop: {fileID: 21300000, guid: f69cb1da9725bf44eac6c0f82179461e, type: 3}
-  blueBottom: {fileID: 21300000, guid: b77c1a5a44935d64da00cfeb0d8f805e, type: 3}
-  greenTop: {fileID: 21300000, guid: 326f81618ca0e304b94c7c856c7d12f1, type: 3}
-  greenBottom: {fileID: 21300000, guid: 880a49d2377874744b8b0519e6e8c5af, type: 3}
+  blank: {fileID: 2100000, guid: abedbf60a0c8c92439220cb36a83a695, type: 2}
+  topSlot: {fileID: 1624633411}
+  bottomSlot: {fileID: 64237084}
+  weaponSlot: {fileID: 65580151}
 --- !u!4 &1465240592
 Transform:
   m_ObjectHideFlags: 0
@@ -9990,6 +9997,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 26636192}
     m_Modifications:
+    - target: {fileID: 2680216675222309100, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
+      propertyPath: allowedItemType
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5123594628916906973, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
       propertyPath: m_Color.b
       value: 0.7735849
@@ -10922,6 +10933,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624020010}
   m_CullTransparentMesh: 1
+--- !u!1 &1624633411 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8738111065607424730, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
+  m_PrefabInstance: {fileID: 2112319834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1630920536
 GameObject:
   m_ObjectHideFlags: 0
@@ -11521,7 +11537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.93333334, g: 0.58431375, b: 0.5921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11763,14 +11779,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1465240591}
-        m_TargetAssemblyTypeName: OutfitManager, Assembly-CSharp
-        m_MethodName: GreenTop
-        m_Mode: 1
+      - m_Target: {fileID: 1756138469}
+        m_TargetAssemblyTypeName: DebugSpawnItem, Assembly-CSharp
+        m_MethodName: PickupItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12214,7 +12230,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12232,7 +12248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.63529414, g: 0.93333334, b: 0.58431375, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12288,11 +12304,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryManager: {fileID: 885575514}
   itemsToPickup:
+  - {fileID: 11400000, guid: 48ea9eca5538415438b7f03999ec5a0f, type: 2}
+  - {fileID: 11400000, guid: 83b177e4afb93a74d800209aff580f74, type: 2}
   - {fileID: 11400000, guid: 2b9bb0a613a224b40a8c6725ef83ede6, type: 2}
-  - {fileID: 11400000, guid: c2ba265f56f518b4c81334775890726b, type: 2}
-  - {fileID: 11400000, guid: aa04005fb19dfb24ab2e86c7d95320b4, type: 2}
-  - {fileID: 11400000, guid: 2535501520072f34987ad4a6ad43ac8f, type: 2}
+  - {fileID: 11400000, guid: 2d94be9720238a548bb9db26367e8d29, type: 2}
+  - {fileID: 11400000, guid: 595f3aee545b091448d91f8880e3346e, type: 2}
+  - {fileID: 11400000, guid: 68b85688b9c59354fa5c60cddfee7802, type: 2}
   - {fileID: 11400000, guid: cacc16111cdd44241b48ce91578e35ef, type: 2}
+  - {fileID: 11400000, guid: 2535501520072f34987ad4a6ad43ac8f, type: 2}
+  - {fileID: 11400000, guid: 062a16f1f0b3c79458c95e16df9226f5, type: 2}
 --- !u!4 &1756138470
 Transform:
   m_ObjectHideFlags: 0
@@ -13446,7 +13466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.93333334, g: 0.58431375, b: 0.5921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14725,14 +14745,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1465240591}
-        m_TargetAssemblyTypeName: OutfitManager, Assembly-CSharp
-        m_MethodName: GreenBottom
-        m_Mode: 1
+      - m_Target: {fileID: 1756138469}
+        m_TargetAssemblyTypeName: DebugSpawnItem, Assembly-CSharp
+        m_MethodName: PickupItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14832,7 +14852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Spawn Squishy Liquid
+  m_text: 'Red Squishy Liquid
 
 '
   m_isRightToLeft: 0
@@ -15053,6 +15073,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 98162399}
     m_Modifications:
+    - target: {fileID: 2680216675222309100, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
+      propertyPath: allowedItemType
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5123594628916906973, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
       propertyPath: m_Color.b
       value: 0.1716358
@@ -15449,6 +15473,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 26636192}
     m_Modifications:
+    - target: {fileID: 2680216675222309100, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
+      propertyPath: allowedItemType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5123594628916906973, guid: b09fd8019c66bbe4ab70570e25adce12, type: 3}
       propertyPath: m_Color.b
       value: 0.7735849

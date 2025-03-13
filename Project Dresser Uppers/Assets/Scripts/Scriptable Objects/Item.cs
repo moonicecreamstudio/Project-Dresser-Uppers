@@ -22,6 +22,9 @@ public class Item : ScriptableObject
     [Header("Only UI")]
     public bool stackable = true;
 
+    public Material material; // Temporarily used for change outfit color
+    public Sprite display2DOutfit; 
+
     [Header("Both")]
     public Sprite image;
 }

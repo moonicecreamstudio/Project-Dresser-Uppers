@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70dec6a07f665b74d8310492b5f39991, type: 3}
   m_Name: Blue Bottom 1
   m_EditorClassIdentifier: 
-  itemType: 1
+  itemType: 2
   baseDefenceStat: 0
   fireDefenceStat: 0
   waterDefenceStat: 5
@@ -22,4 +22,6 @@ MonoBehaviour:
   waterAttackStat: 0
   grassAttackStat: 0
   stackable: 0
+  material: {fileID: 2100000, guid: 726ac815fa91b5a45a4f1cb03d848748, type: 2}
+  display2DOutfit: {fileID: 21300000, guid: a886d33083301f5429cfab59c3a3a2b5, type: 3}
   image: {fileID: 21300000, guid: d3cb95afe9bdfba4f9c479377e9749c0, type: 3}

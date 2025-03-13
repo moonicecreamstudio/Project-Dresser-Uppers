@@ -22,4 +22,6 @@ MonoBehaviour:
   waterAttackStat: 0
   grassAttackStat: 0
   stackable: 0
+  material: {fileID: 2100000, guid: 726ac815fa91b5a45a4f1cb03d848748, type: 2}
+  display2DOutfit: {fileID: 21300000, guid: d40d759d21a2bcc49b1ca727837109f0, type: 3}
   image: {fileID: 21300000, guid: 67b747a7c8f194242a81b5bd201e8b2c, type: 3}

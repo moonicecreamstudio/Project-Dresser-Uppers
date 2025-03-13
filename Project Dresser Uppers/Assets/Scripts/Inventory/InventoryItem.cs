@@ -12,6 +12,20 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public TextMeshProUGUI countText;
 
     [HideInInspector] public Item item;
+    [HideInInspector] public ItemType itemType;
+    [HideInInspector] public float baseDefenceStat;
+    [HideInInspector] public float fireDefenceStat;
+    [HideInInspector] public float waterDefenceStat;
+    [HideInInspector] public float grassDefenceStat;
+
+    [HideInInspector] public float baseAttackStat;
+    [HideInInspector] public float fireAttackStat;
+    [HideInInspector] public float waterAttackStat;
+    [HideInInspector] public float grassAttackStat;
+
+    [HideInInspector] public Material material;
+    [HideInInspector] public Sprite display2DOutfit;
+
     [HideInInspector] public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
     [HideInInspector] public Transform parentBeforeDrag;
@@ -30,6 +44,18 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         item = newItem;
         image.sprite = newItem.image;
+        itemType = newItem.itemType;
+        baseDefenceStat = newItem.baseDefenceStat;
+        fireDefenceStat = newItem.fireDefenceStat;
+        waterDefenceStat = newItem.waterDefenceStat;
+        grassDefenceStat = newItem.grassDefenceStat;
+        baseAttackStat = newItem.baseAttackStat;
+        fireAttackStat = newItem.fireAttackStat;
+        waterAttackStat = newItem.waterAttackStat;
+        grassAttackStat = newItem.grassAttackStat;
+        material = newItem.material;
+        display2DOutfit = newItem.display2DOutfit;
+
         RefreshCount();
     }
 
