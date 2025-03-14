@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12b2b94433b000048a1991e0a1154da4, type: 3}
-  m_Name: Grass Wand
+  m_Name: Fire Bottom 1
   m_EditorClassIdentifier: 
   materialRequired:
-  - itemInput: {fileID: 11400000, guid: 2b9bb0a613a224b40a8c6725ef83ede6, type: 2}
-    quantity: 10
-  - itemInput: {fileID: 11400000, guid: 83b177e4afb93a74d800209aff580f74, type: 2}
-    quantity: 5
-  itemName: Grass Wand
+  - itemInput: {fileID: 11400000, guid: 48ea9eca5538415438b7f03999ec5a0f, type: 2}
+    quantity: 6
+  - itemInput: {fileID: 11400000, guid: 2c1582deefa722244a0221a5b3e770d5, type: 2}
+    quantity: 1
+  itemName: Fire Bottom
   description: 
-  itemOutput: {fileID: 11400000, guid: 4bdc0a2114d2a7f46af3c322d04c1d43, type: 2}
+  itemOutput: {fileID: 11400000, guid: 595f3aee545b091448d91f8880e3346e, type: 2}

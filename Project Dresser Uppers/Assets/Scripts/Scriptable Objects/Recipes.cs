@@ -11,7 +11,7 @@ public class Recipes : ScriptableObject
     public class MaterialRequired
     {
         public Item itemInput;
-        public float quantity;
+        public int quantity;
     }
     public MaterialRequired[] materialRequired;
 

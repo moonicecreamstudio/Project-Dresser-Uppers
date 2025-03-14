@@ -16,14 +16,22 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     }
 
     public AllowedItemType allowedItemType;
+    public CraftingManager craftingManager; // Remember to assign Crafting Manager to the Trash Slot
+
+    public void Start()
+    {
+        craftingManager = GameObject.FindWithTag("CraftingManager").GetComponentInChildren<CraftingManager>();
+    }
 
     public void OnDrop(PointerEventData eventData)
     {
+        InventoryItem itemInSlot = transform.GetComponentInChildren<InventoryItem>();
+        InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
+
         if (transform.childCount == 0)
         {
-            InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
 
-            if (allowedItemType == AllowedItemType.Trash)
+            if (allowedItemType == AllowedItemType.Trash && inventoryItem.itemID != craftingManager.craftedItemID) 
             {
                 inventoryItem.parentAfterDrag = transform;
             }
@@ -56,13 +64,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
         if (transform.childCount == 1) // Swap positions of the objects
         {
-            InventoryItem itemInSlot = transform.GetComponentInChildren<InventoryItem>();
-            InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             InventorySlot previousInventorySlot = inventoryItem.parentBeforeDrag.GetComponentInParent<InventorySlot>();
 
             Debug.Log(previousInventorySlot.allowedItemType);
 
-            if (allowedItemType == AllowedItemType.All)
+            if (allowedItemType == AllowedItemType.All && inventoryItem.itemID != craftingManager.craftedItemID)
             {
                 if (previousInventorySlot.allowedItemType == AllowedItemType.Top && itemInSlot.itemType == ItemType.Top) // Checks if the previous slot matches "Top"
                 {
@@ -91,29 +97,27 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 }
             }
 
-            if (allowedItemType == AllowedItemType.Top && inventoryItem.itemType == ItemType.Top)
+            if (allowedItemType == AllowedItemType.Top && inventoryItem.itemType == ItemType.Top && inventoryItem.itemID != craftingManager.craftedItemID)
             {
                 itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
                 inventoryItem.parentAfterDrag = transform;
             }
 
-            if (allowedItemType == AllowedItemType.Bottom && inventoryItem.itemType == ItemType.Bottom)
+            if (allowedItemType == AllowedItemType.Bottom && inventoryItem.itemType == ItemType.Bottom && inventoryItem.itemID != craftingManager.craftedItemID)
             {
                 itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
                 inventoryItem.parentAfterDrag = transform;
             }
 
-            if (allowedItemType == AllowedItemType.Weapon && inventoryItem.itemType == ItemType.Weapon)
+            if (allowedItemType == AllowedItemType.Weapon && inventoryItem.itemType == ItemType.Weapon && inventoryItem.itemID != craftingManager.craftedItemID)
             {
                 itemInSlot.transform.SetParent(inventoryItem.parentBeforeDrag, false);
                 inventoryItem.parentAfterDrag = transform;
             }
         }
 
-        if (transform.childCount == 1 && allowedItemType == AllowedItemType.Trash)
+        if (transform.childCount == 1 && allowedItemType == AllowedItemType.Trash && inventoryItem.itemID != craftingManager.craftedItemID)
         {
-            InventoryItem itemInSlot = transform.GetComponentInChildren<InventoryItem>();
-            InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();
             Destroy(itemInSlot.gameObject); // Delete item
             inventoryItem.parentAfterDrag = transform; // Replace the item
         }

@@ -101,7 +101,7 @@ public class OutfitManager : MonoBehaviour
             playerScript.equippedWeaponStats[2] = 0;
             playerScript.equippedWeaponStats[3] = 0;
             playerScript.equippedWeaponStats[4] = 0;
-            playerScript.equippedWeaponStats[5] = 0;
+            playerScript.equippedWeaponStats[5] = 5;
             playerScript.equippedWeaponStats[6] = 0;
             playerScript.equippedWeaponStats[7] = 0;
             playerScript.equippedWeaponStats[8] = 0;

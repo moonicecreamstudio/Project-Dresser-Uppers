@@ -63,7 +63,7 @@ MonoBehaviour:
   currentHealth: 25
   baseDefenceStat: 0
   fireDefenceStat: 5
-  waterDefenceStat: -5
+  waterDefenceStat: 0
   grassDefenceStat: 0
   baseAttackStat: 0
   fireAttackStat: 1

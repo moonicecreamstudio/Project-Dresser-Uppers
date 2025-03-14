@@ -29,6 +29,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [HideInInspector] public int count = 1;
     [HideInInspector] public Transform parentAfterDrag;
     [HideInInspector] public Transform parentBeforeDrag;
+    public int itemID;
 
     // Camera
     [HideInInspector] public Camera cam;
@@ -55,8 +56,15 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         grassAttackStat = newItem.grassAttackStat;
         material = newItem.material;
         display2DOutfit = newItem.display2DOutfit;
+        itemID = GenerateUniqueID();
+
+        Debug.Log(itemID);
 
         RefreshCount();
+    }
+    private int GenerateUniqueID()
+    {
+        return (int)(System.DateTime.UtcNow.Ticks % 1000000) + Random.Range(1000, 9999);
     }
 
     public void RefreshCount()
