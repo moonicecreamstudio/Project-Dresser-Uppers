@@ -80,6 +80,7 @@ public class CraftingManager : MonoBehaviour
         //}
 
         //currentRecipe = topRecipes[currentNumberList]; // need a double array
+
         equipmentName.text = currentRecipe.itemName;
         equipmentDescription.text = currentRecipe.description;
 
@@ -230,7 +231,7 @@ public class CraftingManager : MonoBehaviour
     }
     public void SwitchToTop()
     {
-        currentRecipe = topRecipes[currentNumberList];
+        currentRecipe = topRecipes[currentNumberList]; // This might be the flawed logic
         topButton.interactable = false;
         bottomButton.interactable = true;
         weaponButton.interactable = true;
