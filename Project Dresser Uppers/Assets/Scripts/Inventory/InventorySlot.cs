@@ -12,7 +12,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         Top,
         Bottom,
         Weapon,
-        Trash
+        Trash,
+        None
     }
 
     public AllowedItemType allowedItemType;

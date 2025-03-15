@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   materialRequired:
   - itemInput: {fileID: 11400000, guid: 83b177e4afb93a74d800209aff580f74, type: 2}
-    quantity: 6
+    quantity: 4
   - itemInput: {fileID: 11400000, guid: 2b208170c19ffb848aaa130366dfb093, type: 2}
     quantity: 1
   itemName: Water Top
