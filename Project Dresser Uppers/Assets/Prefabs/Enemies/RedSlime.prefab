@@ -51,29 +51,25 @@ MonoBehaviour:
   endTarget: {fileID: 0}
   materialDrop:
   - item: {fileID: 11400000, guid: 48ea9eca5538415438b7f03999ec5a0f, type: 2}
-    chance: 50
-  - item: {fileID: 11400000, guid: 2c1582deefa722244a0221a5b3e770d5, type: 2}
-    chance: 25
-  - item: {fileID: 11400000, guid: 12fdfce7dbee22c419877e5c9f5e9632, type: 2}
-    chance: 5
+    chance: 70
   inventoryManager: {fileID: 0}
   moveTowardsPlayer: 0
   movementSpeed: 5
-  startingHealth: 25
-  currentHealth: 25
+  startingHealth: 100
+  currentHealth: 100
   baseDefenceStat: 0
-  fireDefenceStat: 5
-  waterDefenceStat: 0
-  grassDefenceStat: 0
+  fireDefenceStat: 10
+  waterDefenceStat: -10
+  grassDefenceStat: 20
   baseAttackStat: 0
-  fireAttackStat: 1
+  fireAttackStat: 30
   waterAttackStat: 0
   grassAttackStat: 0
   attackCooldownTimer: 0
-  attackCooldownTime: 5
+  attackCooldownTime: 2
   attackCooldownMode: 0
   hurtCooldownTimer: 0
-  hurtCooldownTime: 5
+  hurtCooldownTime: 2
   hurtCooldownMode: 0
   receivedDamage: 0
   receivedFireDamage: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 864032107629557847}
   - component: {fileID: 384754681297762501}
   m_Layer: 0
-  m_Name: GreenSlime
+  m_Name: RedGhost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,21 +50,21 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   endTarget: {fileID: 0}
   materialDrop:
-  - item: {fileID: 11400000, guid: 2b9bb0a613a224b40a8c6725ef83ede6, type: 2}
-    chance: 70
+  - item: {fileID: 11400000, guid: e064f74199561be498d9da3192bc1955, type: 2}
+    chance: 40
   inventoryManager: {fileID: 0}
   moveTowardsPlayer: 0
   movementSpeed: 5
-  startingHealth: 100
-  currentHealth: 100
+  startingHealth: 150
+  currentHealth: 150
   baseDefenceStat: 0
-  fireDefenceStat: -10
-  waterDefenceStat: 20
-  grassDefenceStat: 10
+  fireDefenceStat: 10
+  waterDefenceStat: 0
+  grassDefenceStat: 20
   baseAttackStat: 0
-  fireAttackStat: 0
+  fireAttackStat: 40
   waterAttackStat: 0
-  grassAttackStat: 30
+  grassAttackStat: 0
   attackCooldownTimer: 0
   attackCooldownTime: 2
   attackCooldownMode: 0
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 448292256, guid: aec78a72149f4d64b80d8f4198700957, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e4e3a30812fb05438c8b73b6e20eed0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -226,7 +226,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.26, y: 0.23}
+    oldSize: {x: 0.23428571, y: 0.20571429}
     newSize: {x: 0.26, y: 0.23}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

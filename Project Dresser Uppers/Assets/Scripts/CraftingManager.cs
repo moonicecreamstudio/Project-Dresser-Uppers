@@ -20,12 +20,21 @@ public class CraftingManager : MonoBehaviour
     InventoryItem materialInSlot1;
     InventoryItem materialInSlot2;
 
+    public Image requiredMaterial1Image;
+    public Image requiredMaterial2Image;
+
+    public TextMeshProUGUI requiredMaterial1Quantity;
+    public TextMeshProUGUI requiredMaterial2Quantity;
+
     public Recipes currentRecipe;
     public int currentNumberList;
 
     public Recipes[] topRecipes;
     public Recipes[] bottomRecipes;
     public Recipes[] weaponRecipes;
+
+    private Dictionary<string, Recipes[]> recipeDictionary;
+    private string currentCategory; // Stores "Top", "Bottom", or "Weapon"
 
     public TextMeshProUGUI equipmentName;
     public TextMeshProUGUI equipmentDescription;
@@ -44,8 +53,18 @@ public class CraftingManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        recipeDictionary = new Dictionary<string, Recipes[]>
+        {
+            { "Top", topRecipes },
+            { "Bottom", bottomRecipes },
+            { "Weapon", weaponRecipes }
+        };
+
+        currentCategory = "Top";
         currentNumberList = 0;
-        currentRecipe = topRecipes[currentNumberList];
+        UpdateRecipe();
+
+        // Update UI
         topButton.interactable = false;
         bottomButton.interactable = true;
         weaponButton.interactable = true;
@@ -57,32 +76,12 @@ public class CraftingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (materialSlot1.GetComponentInChildren<InventoryItem>() != null)
-        //{
-        //    materialInSlot1 = materialSlot1.GetComponentInChildren<InventoryItem>();
-        //    Debug.Log(materialInSlot1.count);
-
-
-        //    if (materialInSlot1.count == recipes[0].materialRequired[0].quantity)
-        //    {
-        //        if (itemSpawned == false)
-        //        {
-        //            SpawnNewItem(recipes[0].itemOutput, outputSlot);
-        //            itemSpawned = true;
-        //        }
-        //    }
-
-
-        //    if (outputSlot.GetComponentInChildren<InventoryItem>() == null)
-        //    {
-        //        itemSpawned = false;
-        //    }
-        //}
-
-        //currentRecipe = topRecipes[currentNumberList]; // need a double array
-
         equipmentName.text = currentRecipe.itemName;
         equipmentDescription.text = currentRecipe.description;
+        requiredMaterial1Image.sprite = currentRecipe.materialRequired[0].itemInput.image;
+        requiredMaterial2Image.sprite = currentRecipe.materialRequired[1].itemInput.image;
+        requiredMaterial1Quantity.text = currentRecipe.materialRequired[0].quantity.ToString();
+        requiredMaterial2Quantity.text = currentRecipe.materialRequired[1].quantity.ToString();
 
         top3D.GetComponent<MeshRenderer>().material = color[currentNumberList];
         bottom3D.GetComponent<MeshRenderer>().material = color[currentNumberList];
@@ -183,7 +182,7 @@ public class CraftingManager : MonoBehaviour
                                     }
                                     materialInSlot1.RefreshCount();
                                     // Consume Materials 2
-                                    materialInSlot2.count -= currentRecipe.materialRequired[0].quantity;
+                                    materialInSlot2.count -= currentRecipe.materialRequired[1].quantity;
                                     if (materialInSlot2.count == 0)
                                     {
                                         Destroy(materialInSlot2.gameObject);
@@ -216,22 +215,26 @@ public class CraftingManager : MonoBehaviour
     public void UpValue()
     {
         currentNumberList++;
-        if (currentNumberList > 2)
+        if (currentNumberList >= recipeDictionary[currentCategory].Length)
         {
             currentNumberList = 0;
         }
+        UpdateRecipe();
     }
     public void DownValue()
     {
         currentNumberList--;
         if (currentNumberList < 0)
         {
-            currentNumberList = 2;
+            currentNumberList = recipeDictionary[currentCategory].Length - 1;
         }
+        UpdateRecipe();
     }
     public void SwitchToTop()
     {
-        currentRecipe = topRecipes[currentNumberList]; // This might be the flawed logic
+        currentCategory = "Top";
+        UpdateRecipe();
+
         topButton.interactable = false;
         bottomButton.interactable = true;
         weaponButton.interactable = true;
@@ -242,7 +245,9 @@ public class CraftingManager : MonoBehaviour
 
     public void SwitchToBottom()
     {
-        currentRecipe = bottomRecipes[currentNumberList];
+        currentCategory = "Bottom";
+        UpdateRecipe();
+
         topButton.interactable = true;
         bottomButton.interactable = false;
         weaponButton.interactable = true;
@@ -253,12 +258,21 @@ public class CraftingManager : MonoBehaviour
 
     public void SwitchToWeapon()
     {
-        currentRecipe = weaponRecipes[currentNumberList];
+        currentCategory = "Weapon";
+        UpdateRecipe();
+
         topButton.interactable = true;
         bottomButton.interactable = true;
         weaponButton.interactable = false;
         top3D.GetComponent<Renderer>().enabled = false;
         bottom3D.GetComponent<Renderer>().enabled = false;
         weapon3D.GetComponent<Renderer>().enabled = true;
+    }
+    private void UpdateRecipe()
+    {
+        if (recipeDictionary.ContainsKey(currentCategory))
+        {
+            currentRecipe = recipeDictionary[currentCategory][currentNumberList];
+        }
     }
 }

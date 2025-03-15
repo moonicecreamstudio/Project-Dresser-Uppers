@@ -15,7 +15,7 @@ MonoBehaviour:
   itemType: 2
   baseDefenceStat: 0
   fireDefenceStat: 0
-  waterDefenceStat: 0
+  waterDefenceStat: 10
   grassDefenceStat: 5
   baseAttackStat: 0
   fireAttackStat: 0

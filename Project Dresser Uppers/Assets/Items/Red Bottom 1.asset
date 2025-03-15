@@ -16,7 +16,7 @@ MonoBehaviour:
   baseDefenceStat: 0
   fireDefenceStat: 5
   waterDefenceStat: 0
-  grassDefenceStat: 0
+  grassDefenceStat: 10
   baseAttackStat: 0
   fireAttackStat: 0
   waterAttackStat: 0

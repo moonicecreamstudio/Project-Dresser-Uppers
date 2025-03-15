@@ -7,7 +7,9 @@ public class EnemySpawner : MonoBehaviour
     public GameObject redSlime;
     public GameObject blueSlime;
     public GameObject greenSlime;
-
+    public GameObject redGhost;
+    public GameObject blueGhost;
+    public GameObject greenGhost;
 
 
     // Start is called before the first frame update
@@ -39,5 +41,23 @@ public class EnemySpawner : MonoBehaviour
         float[] variables = new float[3] { 14.25f, 15f, 15.75f };
         float result = variables[Random.Range(0, variables.Length)];
         Instantiate(greenSlime, new Vector3(11, 42.2f, result), transform.rotation);
+    }
+    public void SpawnRedGhost()
+    {
+        float[] variables = new float[3] { 14.25f, 15f, 15.75f };
+        float result = variables[Random.Range(0, variables.Length)];
+        Instantiate(redGhost, new Vector3(11, 42.2f, result), transform.rotation);
+    }
+    public void SpawnBlueGhost()
+    {
+        float[] variables = new float[3] { 14.25f, 15f, 15.75f };
+        float result = variables[Random.Range(0, variables.Length)];
+        Instantiate(blueGhost, new Vector3(11, 42.2f, result), transform.rotation);
+    }
+    public void SpawnGreenGhost()
+    {
+        float[] variables = new float[3] { 14.25f, 15f, 15.75f };
+        float result = variables[Random.Range(0, variables.Length)];
+        Instantiate(greenGhost, new Vector3(11, 42.2f, result), transform.rotation);
     }
 }

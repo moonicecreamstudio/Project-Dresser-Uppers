@@ -157,29 +157,43 @@ public class EnemyScript : MonoBehaviour
     {
         damageTextSpawnPosition = new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z);
 
-        receivedDamage = baseDamage - baseDefenceStat;
-        if (receivedDamage < 0) // Stops enemies from getting healed from attacks lower than the defence value of the player
-        {
-            receivedDamage = 0;
-        }
-        receivedFireDamage = fireDamage - fireDefenceStat;
-        if (receivedFireDamage < 0)
-        {
-            receivedFireDamage = 0;
-        }
+        receivedDamage = 0;
+        receivedFireDamage = 0;
+        receivedWaterDamage = 0;
+        receivedGrassDamage = 0;
 
-        receivedWaterDamage = waterDamage - waterDefenceStat;
-        if (receivedWaterDamage < 0)
+        if (baseDamage > 0) // If player deals damage, use the formula, if not, no damage.
         {
-            receivedWaterDamage = 0;
+            receivedDamage = baseDamage - baseDefenceStat;
+            if (receivedDamage < 0) // Stops enemies from getting healed from attacks lower than the defence value of the player
+            {
+                receivedDamage = 0;
+            }
         }
-
-        receivedGrassDamage = grassDamage - grassDefenceStat;
-        if (receivedGrassDamage < 0)
+        if (fireDamage > 0)
         {
-            receivedGrassDamage = 0;
+            receivedFireDamage = fireDamage - fireDefenceStat;
+            if (receivedFireDamage < 0)
+            {
+                receivedFireDamage = 0;
+            }
         }
-
+        if (waterDamage > 0)
+        {
+            receivedWaterDamage = waterDamage - waterDefenceStat;
+            if (receivedWaterDamage < 0)
+            {
+                receivedWaterDamage = 0;
+            }
+        }
+        if (grassDamage > 0)
+        {
+            receivedGrassDamage = grassDamage - grassDefenceStat;
+            if (receivedGrassDamage < 0)
+            {
+                receivedGrassDamage = 0;
+            }
+        }
         receivedTotalDamage = receivedDamage + receivedFireDamage + receivedWaterDamage + receivedGrassDamage;
 
         currentHealth -= receivedTotalDamage;

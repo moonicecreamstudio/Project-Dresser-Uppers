@@ -15,8 +15,8 @@ MonoBehaviour:
   materialRequired:
   - itemInput: {fileID: 11400000, guid: 48ea9eca5538415438b7f03999ec5a0f, type: 2}
     quantity: 6
-  - itemInput: {fileID: 11400000, guid: 2c1582deefa722244a0221a5b3e770d5, type: 2}
+  - itemInput: {fileID: 11400000, guid: e064f74199561be498d9da3192bc1955, type: 2}
     quantity: 1
   itemName: Fire Top
-  description: 
+  description: Effective against grass.
   itemOutput: {fileID: 11400000, guid: 2d94be9720238a548bb9db26367e8d29, type: 2}

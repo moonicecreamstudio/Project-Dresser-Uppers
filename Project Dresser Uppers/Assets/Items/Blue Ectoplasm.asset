@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70dec6a07f665b74d8310492b5f39991, type: 3}
-  m_Name: Fire Wand
+  m_Name: Blue Ectoplasm
   m_EditorClassIdentifier: 
-  itemType: 3
+  itemType: 0
   baseDefenceStat: 0
   fireDefenceStat: 0
   waterDefenceStat: 0
   grassDefenceStat: 0
   baseAttackStat: 0
-  fireAttackStat: 5
+  fireAttackStat: 0
   waterAttackStat: 0
   grassAttackStat: 0
-  stackable: 0
+  stackable: 1
   material: {fileID: 0}
   display2DOutfit: {fileID: 0}
-  image: {fileID: 21300000, guid: bb6e8ade4643fb44689447f4c33331d7, type: 3}
+  image: {fileID: 21300000, guid: 48830d45cb4a4a243812cbba5e07873e, type: 3}

@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70dec6a07f665b74d8310492b5f39991, type: 3}
-  m_Name: Green Top 1
+  m_Name: Grass Staff
   m_EditorClassIdentifier: 
-  itemType: 1
+  itemType: 3
   baseDefenceStat: 0
   fireDefenceStat: 0
-  waterDefenceStat: 15
-  grassDefenceStat: 10
+  waterDefenceStat: 0
+  grassDefenceStat: 0
   baseAttackStat: 0
   fireAttackStat: 0
   waterAttackStat: 0
-  grassAttackStat: 0
+  grassAttackStat: 40
   stackable: 0
-  material: {fileID: 2100000, guid: 24c6ed1c9174f654396d5cbe4f8580a4, type: 2}
-  display2DOutfit: {fileID: 21300000, guid: f69cb1da9725bf44eac6c0f82179461e, type: 3}
-  image: {fileID: 21300000, guid: db80278f85bcc3c45b08be12bac6ece7, type: 3}
+  material: {fileID: 0}
+  display2DOutfit: {fileID: 0}
+  image: {fileID: 21300000, guid: 58ef2e86f653e8e40b60c98ad0872401, type: 3}
