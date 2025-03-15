@@ -34,7 +34,6 @@ public class EnemyDamageText : MonoBehaviour
 
     void Update()
     {
-
         this.transform.position += Vector3.up * (movementSpeed * Time.deltaTime);
     }
 

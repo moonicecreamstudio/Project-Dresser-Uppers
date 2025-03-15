@@ -24,13 +24,13 @@ public class HeadBobbingHandle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerScript.isFighting == true)
+        if (playerScript.isFighting == true || playerScript.hasDied == true)
         {
             headHandle.offsetMin = new Vector2(headHandle.offsetMin.x, 0);
             headHandle.offsetMax = new Vector2(headHandle.offsetMax.x, 0);
         }
 
-        if (playerScript.isFighting == false)
+        if (playerScript.isFighting == false && playerScript.hasDied == false)
         {
             timer += Time.deltaTime;
         }

@@ -58,6 +58,7 @@ public class EnemyScript : MonoBehaviour
     public bool hurtCooldownMode;
 
     bool attackMode;
+    bool escapeMode;
     bool moveIn;
     bool moveOut;
 
@@ -87,40 +88,58 @@ public class EnemyScript : MonoBehaviour
         endTarget = GameObject.FindWithTag("EnemyEndTarget").GetComponentInChildren<Transform>();
 
         endX = endTarget.position.x + Random.Range(-2.25f, 2.25f);
-        endZ = endTarget.position.z + Random.Range(-2f, 2f);
+        endZ = endTarget.position.z + Random.Range(-1.5f, 1.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentHealth <= 0)
+
+        if (moveTowardsPlayer == true && playerScript.hasDied == false)
         {
-            Death();
+            Movement();
         }
 
-        if (transform.position.x <= endX)
+        if (transform.position.x <= endX && moveTowardsPlayer == true)
         {
             attackMode = true;
             moveTowardsPlayer = false;
         }
-        else
-        {
-            attackMode = false;
-        }
 
-        if (attackMode == true)
+        if (attackMode == true && playerScript.hasDied == false)
         {
             Attack();
             ReceiveDamage();
         }
 
-        if (moveTowardsPlayer == true)
+        if (currentHealth <= 0)
         {
-            Movement();
+            Death();
         }
 
+        if (playerScript.hasDied == true)
+        {
+            moveTowardsPlayer = false;
+            attackMode = false;
+            escapeMode = true;
+        }
+
+        if (escapeMode == true)
+        {
+            Escape();
+        }
     }
 
+    public void Escape()
+    {
+        transform.Translate(Vector3.left * movementSpeed * Time.deltaTime);
+
+        if (transform.position.x <= -10)
+        {
+            playerScript.currentEnemies -= 1;
+            Destroy(gameObject);
+        }
+    }
 
     public void ReceiveDamage()
     {
@@ -234,7 +253,6 @@ public class EnemyScript : MonoBehaviour
 
     public void Movement()
     {
-
         if (transform.position.x >= endX)
         {
             var step = movementSpeed * Time.deltaTime;

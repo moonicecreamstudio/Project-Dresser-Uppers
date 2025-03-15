@@ -12,10 +12,12 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] private float redGhostSpawnChance = 10.0f;
     [SerializeField] private float blueGhostSpawnChance = 10.0f;
     [SerializeField] private float greenGhostSpawnChance = 10.0f;
+    public Player playerScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerScript = GameObject.FindWithTag("Player").GetComponentInChildren<Player>(); // Will have to come back to this if destroying the player object is required.
         timer = 0;
     }
 
@@ -24,7 +26,7 @@ public class EnemySpawnManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 5)
+        if (timer >= 5 && playerScript.hasDied == false)
         {
             var chance = Random.Range(1.0f, 100.0f);
 

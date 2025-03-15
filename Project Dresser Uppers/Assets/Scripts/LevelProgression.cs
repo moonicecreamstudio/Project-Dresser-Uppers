@@ -21,7 +21,7 @@ public class LevelProgression : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerScript.isFighting == false)
+        if (playerScript.isFighting == false && playerScript.hasDied == false)
         {
             timer += Time.deltaTime;
         }

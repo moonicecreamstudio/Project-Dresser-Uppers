@@ -20,7 +20,7 @@ public class EnviromentMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerScript.isFighting == false)
+        if (playerScript.isFighting == false && playerScript.hasDied == false)
         {
             transform.Translate(Vector3.left * movementSpeed * Time.deltaTime);
         }

@@ -24,7 +24,7 @@ public class DamageText : MonoBehaviour
         damage.text = playerScript.receivedTotalDamage.ToString();
         topCanvas = GameObject.FindWithTag("TopCanvas");
         damage.transform.SetParent(topCanvas.transform, false);
-        damage.transform.position = new Vector3(playerHealthBar.transform.position.x - 0.1f, playerHealthBar.transform.position.y - 0.25f, damage.transform.position.z);
+        damage.transform.position = new Vector3(playerHealthBar.transform.position.x - 0.25f, playerHealthBar.transform.position.y - 0.25f, damage.transform.position.z);
     }
 
     // Update is called once per frame

@@ -13,20 +13,24 @@ public class Player : MonoBehaviour
     public int currentEnemies;
 
     public float maxHealth;
-    public float currentHealth;
-    bool hasDied;
+    [HideInInspector] public float currentHealth;
+    [HideInInspector] public bool hasDied;
+    public float timeNeededToRevive;
+    [HideInInspector] public float reviveTimer;
+    public GameObject respawnUI;
+    public TextMeshProUGUI respawnTimerText;
 
-    public float baseDefenceStat;
+    [HideInInspector] public float baseDefenceStat;
 
-    public float fireDefenceStat;
-    public float waterDefenceStat;
-    public float grassDefenceStat;
+    [HideInInspector] public float fireDefenceStat;
+    [HideInInspector] public float waterDefenceStat;
+    [HideInInspector] public float grassDefenceStat;
 
-    public float baseAttackStat;
+    [HideInInspector] public float baseAttackStat;
 
-    public float fireAttackStat;
-    public float waterAttackStat;
-    public float grassAttackStat;
+    [HideInInspector] public float fireAttackStat;
+    [HideInInspector] public float waterAttackStat;
+    [HideInInspector] public float grassAttackStat;
 
     public List<float> equippedTopStats = new List<float>();
     public List<float> equippedBottomStats = new List<float>();
@@ -53,6 +57,13 @@ public class Player : MonoBehaviour
     public TMPro.TextMeshProUGUI waterAttackText;
     public TMPro.TextMeshProUGUI grassAttackText;
 
+    public GameObject body2D;
+    public GameObject top2D;
+    public GameObject bottom2D;
+    public GameObject weapon2D;
+
+    
+
     [System.Serializable]
 
     public struct KillEventData
@@ -67,8 +78,10 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentHealth = maxHealth;
         isFighting = false;
         currentEnemies = 0;
+        respawnUI.SetActive(false);
 
         equippedTopStats[0] = 0; // health
         equippedTopStats[1] = 0; // baseDefence
@@ -145,8 +158,29 @@ public class Player : MonoBehaviour
         {
             if (hasDied == false)
             {
+                body2D.GetComponent<SpriteRenderer>().enabled = false;
+                top2D.GetComponent<SpriteRenderer>().enabled = false;
+                bottom2D.GetComponent<SpriteRenderer>().enabled = false;
                 PlayerDeath();
                 hasDied = true;
+            }
+            reviveTimer += Time.deltaTime;
+            respawnUI.SetActive(true);
+            var timeLeft = timeNeededToRevive - reviveTimer;
+            respawnTimerText.text = Mathf.Round(timeLeft).ToString();
+        }
+
+        if (hasDied == true)
+        {
+            if (reviveTimer >= timeNeededToRevive)
+            {
+                respawnUI.SetActive(false);
+                reviveTimer = 0;
+                currentHealth = maxHealth;
+                hasDied = false;
+                body2D.GetComponent<SpriteRenderer>().enabled = true;
+                top2D.GetComponent<SpriteRenderer>().enabled = true;
+                bottom2D.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
     }
