@@ -2597,6 +2597,7 @@ MonoBehaviour:
   redGhost: {fileID: 898754145186491395, guid: 0b247a8f185897f4cad93c9b06593f14, type: 3}
   blueGhost: {fileID: 898754145186491395, guid: 5961113be59999349b67ab9cac4106bf, type: 3}
   greenGhost: {fileID: 898754145186491395, guid: ed0b8a4e5434ceb4daa241dd54f7321d, type: 3}
+  enemyList: {fileID: 2037142038}
 --- !u!4 &385965956
 Transform:
   m_ObjectHideFlags: 0
@@ -7357,6 +7358,7 @@ GameObject:
   - component: {fileID: 955017764}
   - component: {fileID: 955017766}
   - component: {fileID: 955017765}
+  - component: {fileID: 955017767}
   m_Layer: 5
   m_Name: Skill 2
   m_TagString: Untagged
@@ -7422,6 +7424,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955017763}
   m_CullTransparentMesh: 1
+--- !u!114 &955017767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955017763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad38a23c57413440bb4f664028b6e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillTimer: 0
+  skillCooldownTime: 30
+  skillButton: {fileID: 1560462175}
+  skillActivated: 0
+  percentageFill: 0
+  enemyList: {fileID: 0}
+  skillType: 1
 --- !u!1 &957159923
 GameObject:
   m_ObjectHideFlags: 0
@@ -12325,6 +12346,7 @@ GameObject:
   - component: {fileID: 1434258637}
   - component: {fileID: 1434258639}
   - component: {fileID: 1434258638}
+  - component: {fileID: 1434258640}
   m_Layer: 5
   m_Name: Skill 1
   m_TagString: Untagged
@@ -12390,6 +12412,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434258636}
   m_CullTransparentMesh: 1
+--- !u!114 &1434258640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434258636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad38a23c57413440bb4f664028b6e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillTimer: 0
+  skillCooldownTime: 20
+  skillButton: {fileID: 1907402268}
+  skillActivated: 0
+  percentageFill: 0
+  enemyList: {fileID: 2037142038}
+  skillType: 0
 --- !u!1001 &1442223878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14105,13 +14146,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 955017767}
+        m_TargetAssemblyTypeName: SkillsScript, Assembly-CSharp
+        m_MethodName: activateSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -14142,7 +14183,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 0.347
+  m_FillAmount: 0.243
   m_FillClockwise: 1
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -18250,13 +18291,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1434258640}
+        m_TargetAssemblyTypeName: SkillsScript, Assembly-CSharp
+        m_MethodName: activateSkill
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19821,6 +19862,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2028215170}
   m_CullTransparentMesh: 1
+--- !u!1 &2037142038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2037142039}
+  m_Layer: 0
+  m_Name: EnemyList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2037142039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037142038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11754837, y: 46.05477, z: 6.3988776}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2049323097
 GameObject:
   m_ObjectHideFlags: 0
@@ -21316,3 +21388,4 @@ SceneRoots:
   - {fileID: 1851687161}
   - {fileID: 300297296}
   - {fileID: 934582075}
+  - {fileID: 2037142039}

@@ -183,6 +183,13 @@ public class Player : MonoBehaviour
                 bottom2D.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
+
+        // Over healing
+
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
     }
 
     public void ReceiveEnemyDamage(float baseDamage, float fireDamage, float waterDamage, float grassDamage)

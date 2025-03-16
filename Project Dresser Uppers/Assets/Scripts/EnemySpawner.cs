@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject redGhost;
     public GameObject blueGhost;
     public GameObject greenGhost;
-
+    public GameObject enemyList;
 
     // Start is called before the first frame update
     void Start()
@@ -28,36 +28,36 @@ public class EnemySpawner : MonoBehaviour
     {
         float[] variables = new float[3] { 14.25f, 15f, 15.75f};
         float result = variables[Random.Range(0, variables.Length)];
-        Instantiate(redSlime, new Vector3(11, 42.2f, result), transform.rotation);
+        Instantiate(redSlime, new Vector3(11, 42.2f, result), transform.rotation, enemyList.transform);
     }
     public void SpawnBlueSlime()
     {
         float[] variables = new float[3] { 14.25f, 15f, 15.75f };
         float result = variables[Random.Range(0, variables.Length)];
-        Instantiate(blueSlime, new Vector3(11, 42.2f, result), transform.rotation);
+        Instantiate(blueSlime, new Vector3(11, 42.2f, result), transform.rotation, enemyList.transform);
     }
     public void SpawnGreenSlime()
     {
         float[] variables = new float[3] { 14.25f, 15f, 15.75f };
         float result = variables[Random.Range(0, variables.Length)];
-        Instantiate(greenSlime, new Vector3(11, 42.2f, result), transform.rotation);
+        Instantiate(greenSlime, new Vector3(11, 42.2f, result), transform.rotation, enemyList.transform);
     }
     public void SpawnRedGhost()
     {
         float[] variables = new float[3] { 14.25f, 15f, 15.75f };
         float result = variables[Random.Range(0, variables.Length)];
-        Instantiate(redGhost, new Vector3(11, 42.2f, result), transform.rotation);
+        Instantiate(redGhost, new Vector3(11, 42.2f, result), transform.rotation, enemyList.transform);
     }
     public void SpawnBlueGhost()
     {
         float[] variables = new float[3] { 14.25f, 15f, 15.75f };
         float result = variables[Random.Range(0, variables.Length)];
-        Instantiate(blueGhost, new Vector3(11, 42.2f, result), transform.rotation);
+        Instantiate(blueGhost, new Vector3(11, 42.2f, result), transform.rotation, enemyList.transform);
     }
     public void SpawnGreenGhost()
     {
         float[] variables = new float[3] { 14.25f, 15f, 15.75f };
         float result = variables[Random.Range(0, variables.Length)];
-        Instantiate(greenGhost, new Vector3(11, 42.2f, result), transform.rotation);
+        Instantiate(greenGhost, new Vector3(11, 42.2f, result), transform.rotation, enemyList.transform);
     }
 }
