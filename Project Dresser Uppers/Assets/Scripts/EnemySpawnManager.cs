@@ -26,7 +26,7 @@ public class EnemySpawnManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= 5 && playerScript.hasDied == false)
+        if (timer >= 8 && playerScript.hasDied == false)
         {
             var chance = Random.Range(1.0f, 100.0f);
 

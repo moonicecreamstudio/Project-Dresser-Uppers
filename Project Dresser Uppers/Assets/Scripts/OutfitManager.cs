@@ -39,10 +39,10 @@ public class OutfitManager : MonoBehaviour
         if (itemInTopSlot == null)
         {
             playerScript.equippedTopStats[0] = 0;
-            playerScript.equippedTopStats[1] = 0;
-            playerScript.equippedTopStats[2] = 0;
-            playerScript.equippedTopStats[3] = 0;
-            playerScript.equippedTopStats[4] = 0;
+            playerScript.equippedTopStats[1] = 5;
+            playerScript.equippedTopStats[2] = 5;
+            playerScript.equippedTopStats[3] = 5;
+            playerScript.equippedTopStats[4] = 5;
             playerScript.equippedTopStats[5] = 0;
             playerScript.equippedTopStats[6] = 0;
             playerScript.equippedTopStats[7] = 0;
@@ -101,7 +101,7 @@ public class OutfitManager : MonoBehaviour
             playerScript.equippedWeaponStats[2] = 0;
             playerScript.equippedWeaponStats[3] = 0;
             playerScript.equippedWeaponStats[4] = 0;
-            playerScript.equippedWeaponStats[5] = 5;
+            playerScript.equippedWeaponStats[5] = 10;
             playerScript.equippedWeaponStats[6] = 0;
             playerScript.equippedWeaponStats[7] = 0;
             playerScript.equippedWeaponStats[8] = 0;

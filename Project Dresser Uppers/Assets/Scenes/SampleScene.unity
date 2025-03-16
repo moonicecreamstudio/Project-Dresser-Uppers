@@ -15711,7 +15711,7 @@ MonoBehaviour:
   levelProgression: {fileID: 244410634}
   isFighting: 0
   currentEnemies: 0
-  maxHealth: 300
+  maxHealth: 500
   currentHealth: 300
   hasDied: 0
   timeNeededToRevive: 10

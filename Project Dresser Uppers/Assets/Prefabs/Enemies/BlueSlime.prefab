@@ -55,21 +55,21 @@ MonoBehaviour:
   inventoryManager: {fileID: 0}
   moveTowardsPlayer: 0
   movementSpeed: 5
-  startingHealth: 100
-  currentHealth: 100
+  startingHealth: 70
+  currentHealth: 70
   baseDefenceStat: 0
   fireDefenceStat: 20
   waterDefenceStat: 10
   grassDefenceStat: -10
   baseAttackStat: 0
   fireAttackStat: 0
-  waterAttackStat: 30
+  waterAttackStat: 20
   grassAttackStat: 0
   attackCooldownTimer: 0
-  attackCooldownTime: 2
+  attackCooldownTime: 1
   attackCooldownMode: 0
   hurtCooldownTimer: 0
-  hurtCooldownTime: 2
+  hurtCooldownTime: 1
   hurtCooldownMode: 0
   receivedDamage: 0
   receivedFireDamage: 0

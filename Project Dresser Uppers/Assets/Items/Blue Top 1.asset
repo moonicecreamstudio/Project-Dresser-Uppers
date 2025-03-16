@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemType: 1
   baseDefenceStat: 0
-  fireDefenceStat: 15
-  waterDefenceStat: 10
+  fireDefenceStat: 10
+  waterDefenceStat: 5
   grassDefenceStat: 0
   baseAttackStat: 0
   fireAttackStat: 0
