@@ -253,15 +253,8 @@ public class EnemyScript : MonoBehaviour
 
     public void Movement()
     {
-        if (transform.position.x > endX)
-        {
-            var step = movementSpeed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3 (endX, transform.position.y, endZ), step);
-        }
-        else
-        {
-            moveTowardsPlayer = false;
-        }
+        var step = movementSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3 (endX - 0.01f, transform.position.y, endZ), step);
     }
 
     public void Death()
