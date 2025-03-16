@@ -79,22 +79,46 @@ public class CraftingManager : MonoBehaviour
         equipmentName.text = currentRecipe.itemName;
         equipmentDescription.text = currentRecipe.description;
         requiredMaterial1Image.sprite = currentRecipe.materialRequired[0].itemInput.image;
-        requiredMaterial2Image.sprite = currentRecipe.materialRequired[1].itemInput.image;
+        if (currentRecipe.materialRequired.Length == 2)
+        {
+            requiredMaterial2Image.enabled = true;
+            requiredMaterial2Image.sprite = currentRecipe.materialRequired[1].itemInput.image;
+            requiredMaterial2Quantity.text = currentRecipe.materialRequired[1].quantity.ToString();
+        } else
+        {
+            requiredMaterial2Image.sprite = null;
+            requiredMaterial2Image.enabled = false;
+            requiredMaterial2Quantity.text = "0";
+        }
+
         requiredMaterial1Quantity.text = currentRecipe.materialRequired[0].quantity.ToString();
-        requiredMaterial2Quantity.text = currentRecipe.materialRequired[1].quantity.ToString();
+
 
         top3D.GetComponent<MeshRenderer>().material = color[currentNumberList];
         bottom3D.GetComponent<MeshRenderer>().material = color[currentNumberList];
         weapon3D.GetComponent<MeshRenderer>().material = color[currentNumberList];
 
 
-        if (materialSlot1.GetComponentInChildren<InventoryItem>() == null || materialSlot2.GetComponentInChildren<InventoryItem>() == null) // If either item slots is null (won't work with single recipes.)
+        if (materialSlot1.GetComponentInChildren<InventoryItem>() == null && currentRecipe.materialRequired.Length == 1) // If either item slots is null (won't work with single recipes.)
         {
             if (outputSlot.GetComponentInChildren<InventoryItem>() != null)
             {
                 InventoryItem itemInOutput = outputSlot.GetComponentInChildren<InventoryItem>();
                 Destroy(itemInOutput.gameObject); // Delete item
                 itemSpawned = false;
+            }
+        }
+
+        if (currentRecipe.materialRequired.Length == 2)
+        {
+            if (materialSlot2.GetComponentInChildren<InventoryItem>() == null || materialSlot1.GetComponentInChildren<InventoryItem>() == null)
+            {
+                if (outputSlot.GetComponentInChildren<InventoryItem>() != null)
+                {
+                    InventoryItem itemInOutput = outputSlot.GetComponentInChildren<InventoryItem>();
+                    Destroy(itemInOutput.gameObject); // Delete item
+                    itemSpawned = false;
+                }
             }
         }
 
@@ -274,5 +298,6 @@ public class CraftingManager : MonoBehaviour
         {
             currentRecipe = recipeDictionary[currentCategory][currentNumberList];
         }
+
     }
 }
