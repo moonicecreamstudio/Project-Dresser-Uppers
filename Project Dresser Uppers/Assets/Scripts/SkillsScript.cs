@@ -64,6 +64,7 @@ public class SkillsScript : MonoBehaviour
             foreach (Transform child in enemyList.transform)
             {
                 Destroy(child.gameObject);
+                playerScript.currentEnemies = 0;
             }
             skillActivated = true;
             skillTimer = 0;
