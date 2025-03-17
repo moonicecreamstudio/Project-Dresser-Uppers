@@ -15,8 +15,6 @@ MonoBehaviour:
   materialRequired:
   - itemInput: {fileID: 11400000, guid: 83b177e4afb93a74d800209aff580f74, type: 2}
     quantity: 2
-  - itemInput: {fileID: 11400000, guid: 2b208170c19ffb848aaa130366dfb093, type: 2}
-    quantity: 0
   itemName: Water Bottom
   description: Effective against fire.
   itemOutput: {fileID: 11400000, guid: 062a16f1f0b3c79458c95e16df9226f5, type: 2}
