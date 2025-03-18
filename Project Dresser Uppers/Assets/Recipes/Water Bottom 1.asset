@@ -16,5 +16,7 @@ MonoBehaviour:
   - itemInput: {fileID: 11400000, guid: 83b177e4afb93a74d800209aff580f74, type: 2}
     quantity: 2
   itemName: Water Bottom
-  description: Effective against fire.
+  description: A craftable item. Defends best against water attacks when equipped.
+    A common piece of armour used by military infantry. These shift with the weight
+    of the wearer, aiding in one's motions but making it harder to stop.
   itemOutput: {fileID: 11400000, guid: 062a16f1f0b3c79458c95e16df9226f5, type: 2}

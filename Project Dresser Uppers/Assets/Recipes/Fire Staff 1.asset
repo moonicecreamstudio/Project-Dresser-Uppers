@@ -18,5 +18,7 @@ MonoBehaviour:
   - itemInput: {fileID: 11400000, guid: e064f74199561be498d9da3192bc1955, type: 2}
     quantity: 1
   itemName: Fire Staff
-  description: Effective against grass.
+  description: A craftable item. Applies fire damage to your attacks when equipped.
+    A common weapon used by the Imperial Mages. They have been made so even those
+    with little magical skill can use their abilities.
   itemOutput: {fileID: 11400000, guid: 934919488a30a5e4eafa8acd000c191b, type: 2}

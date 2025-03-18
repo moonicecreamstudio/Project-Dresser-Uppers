@@ -18,5 +18,7 @@ MonoBehaviour:
   - itemInput: {fileID: 11400000, guid: 2b208170c19ffb848aaa130366dfb093, type: 2}
     quantity: 1
   itemName: Water Top
-  description: Effective against fire.
+  description: 'A craftable item. Defends best against fire attacks when equipped.
+    A common piece of armour used by military infantry. These shift with the weight
+    of the wearer, aiding in one''s motions but making it harder to stop. '
   itemOutput: {fileID: 11400000, guid: 2535501520072f34987ad4a6ad43ac8f, type: 2}

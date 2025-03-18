@@ -16,5 +16,7 @@ MonoBehaviour:
   - itemInput: {fileID: 11400000, guid: 48ea9eca5538415438b7f03999ec5a0f, type: 2}
     quantity: 2
   itemName: Fire Bottom
-  description: Effective against grass.
+  description: A craftable item. Defends best against fire attacks when equipped.
+    A common piece of armour used by military infantry. Highly sought after, these
+    produce a constant heat that can keep one warm no matter the weather.
   itemOutput: {fileID: 11400000, guid: 595f3aee545b091448d91f8880e3346e, type: 2}

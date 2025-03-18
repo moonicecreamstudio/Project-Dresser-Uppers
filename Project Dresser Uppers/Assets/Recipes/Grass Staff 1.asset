@@ -18,5 +18,7 @@ MonoBehaviour:
   - itemInput: {fileID: 11400000, guid: a871c427c1142844faa24f7a1cb168c3, type: 2}
     quantity: 1
   itemName: Grass Staff
-  description: Effective against water.
+  description: A craftable item. Applies grass damage to your attacks when equipped.
+    A common weapon used by the Imperial Mages. Despite it being proven that staffs
+    are a superior spellcasting focus, some still cling to orbs and tomes.
   itemOutput: {fileID: 11400000, guid: 4bdc0a2114d2a7f46af3c322d04c1d43, type: 2}

@@ -16,5 +16,7 @@ MonoBehaviour:
   - itemInput: {fileID: 11400000, guid: 2b9bb0a613a224b40a8c6725ef83ede6, type: 2}
     quantity: 2
   itemName: Grass Bottom
-  description: Effective against water.
+  description: A craftable item. Defends best against grass attacks when equipped.
+    A common piece of armour used by military infantry. The freedom of movement these
+    allow make them a favourite amongst many soldiers.
   itemOutput: {fileID: 11400000, guid: cacc16111cdd44241b48ce91578e35ef, type: 2}

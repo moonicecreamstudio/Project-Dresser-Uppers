@@ -18,5 +18,7 @@ MonoBehaviour:
   - itemInput: {fileID: 11400000, guid: e064f74199561be498d9da3192bc1955, type: 2}
     quantity: 1
   itemName: Fire Top
-  description: Effective against grass.
+  description: A craftable item. Defends best against grass attacks when equipped.
+    A common piece of armour used by military infantry. Highly sought after, these
+    produce a constant heat that can keep one warm no matter the weather.
   itemOutput: {fileID: 11400000, guid: 2d94be9720238a548bb9db26367e8d29, type: 2}

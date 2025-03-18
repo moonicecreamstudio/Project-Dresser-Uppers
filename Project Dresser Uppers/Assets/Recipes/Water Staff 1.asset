@@ -18,5 +18,7 @@ MonoBehaviour:
   - itemInput: {fileID: 11400000, guid: 2b208170c19ffb848aaa130366dfb093, type: 2}
     quantity: 1
   itemName: Water Staff
-  description: Effective against fire.
+  description: A craftable item. Applies water damage to your attacks when equipped.
+    A common weapon used by the Imperial Mages. Despite being made with common materials,
+    staffs are uncommon due to the skill required to make them.
   itemOutput: {fileID: 11400000, guid: a139c6254d760cf4e8dc6870d7fb03ae, type: 2}

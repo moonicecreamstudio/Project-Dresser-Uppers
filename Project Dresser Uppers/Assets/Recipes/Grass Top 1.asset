@@ -18,5 +18,7 @@ MonoBehaviour:
   - itemInput: {fileID: 11400000, guid: a871c427c1142844faa24f7a1cb168c3, type: 2}
     quantity: 1
   itemName: Grass Top
-  description: Effective against water.
+  description: A craftable item. Defends  best against water attacks when equipped.
+    A common piece of armour used by military infantry. The freedom of movement these
+    allow make them a favourite amongst many soldiers.
   itemOutput: {fileID: 11400000, guid: 68b85688b9c59354fa5c60cddfee7802, type: 2}
