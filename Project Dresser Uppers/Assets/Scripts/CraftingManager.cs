@@ -50,6 +50,17 @@ public class CraftingManager : MonoBehaviour
 
     public Material[] color;
 
+    [System.Serializable]
+
+    public struct KillEventData
+    {
+        public float enemiesAlive;
+        public float timePassedInSeconds;
+        // items in inventory
+        // equipment equipped
+        // total EXP
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -214,6 +225,7 @@ public class CraftingManager : MonoBehaviour
                                     materialInSlot2.RefreshCount();
                                     itemSpawned = false;
                                     craftedItemID = 0;
+                                    TelemetryLogger.Log(this, itemInSlot.item.ToString ());
                                     break;
                                 }
                             }

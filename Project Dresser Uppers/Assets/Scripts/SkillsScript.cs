@@ -57,6 +57,7 @@ public class SkillsScript : MonoBehaviour
             playerScript.currentHealth += (playerScript.maxHealth / 2);
             skillActivated = true;
             skillTimer = 0;
+            TelemetryLogger.Log(this, "Heal", playerScript.levelProgression.timer.ToString());
         }
 
         if (skillType == SkillType.Damage)
@@ -68,6 +69,7 @@ public class SkillsScript : MonoBehaviour
             }
             skillActivated = true;
             skillTimer = 0;
+            TelemetryLogger.Log(this, "Rend", playerScript.levelProgression.timer.ToString());
         }
     }
 }

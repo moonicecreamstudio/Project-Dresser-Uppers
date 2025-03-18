@@ -127,7 +127,7 @@ public class Player : MonoBehaviour
         waterAttackText.text = waterAttackStat.ToString();
         grassAttackText.text = grassAttackStat.ToString();
 
-        Debug.Log(isFighting);
+        //Debug.Log(isFighting);
         if (currentEnemies > 0)
         {
             isFighting = true;
@@ -237,7 +237,7 @@ public class Player : MonoBehaviour
             timePassedInSeconds = levelProgression.timer
         };
         
-        TelemetryLogger.Log(this, "Player Death", data);
+        TelemetryLogger.Log(this, "Player Death", levelProgression.timer.ToString());
         Debug.Log("You died.");
     }
 }

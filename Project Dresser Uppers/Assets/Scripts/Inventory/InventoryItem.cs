@@ -58,7 +58,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         display2DOutfit = newItem.display2DOutfit;
         itemID = GenerateUniqueID();
 
-        Debug.Log(itemID);
+        //Debug.Log(itemID);
 
         RefreshCount();
     }
@@ -81,7 +81,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         parentBeforeDrag = transform.parent;
         transform.SetParent(transform.root);
 
-        TelemetryLogger.Log(this, "Click: On Item", new Vector2(Input.mousePosition.x, Input.mousePosition.y));
+        //TelemetryLogger.Log(this, "Click: On Item", new Vector2(Input.mousePosition.x, Input.mousePosition.y));
     }
 
     public void OnDrag(PointerEventData eventData)

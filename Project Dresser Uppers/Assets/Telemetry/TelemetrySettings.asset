@@ -17,6 +17,6 @@ MonoBehaviour:
   _version: Test1
   _serverURL: https://telemetry-js-792bae8f0c9a.herokuapp.com/
   serverCommunication: 0
-  debugLogging: 4
+  debugLogging: 0
   <SetupId>k__BackingField: XPC > Project Dresser Uppers / Project Dresser Uppers
     @ calvi-980300689
