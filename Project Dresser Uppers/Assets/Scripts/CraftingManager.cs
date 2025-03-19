@@ -170,6 +170,7 @@ public class CraftingManager : MonoBehaviour
                                 materialInSlot1.RefreshCount();
                                 itemSpawned = false;
                                 craftedItemID = 0;
+                                TelemetryLogger.Log(this, itemInSlot.item.ToString());
                                 break;
                             }
                         }

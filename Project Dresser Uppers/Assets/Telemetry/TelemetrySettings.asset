@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   userName: ipca
   secret: 991721630
-  _version: Test1
+  _version: Week10PlayTest
   _serverURL: https://telemetry-js-792bae8f0c9a.herokuapp.com/
   serverCommunication: 0
   debugLogging: 0
