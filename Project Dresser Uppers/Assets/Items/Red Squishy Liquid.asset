@@ -13,5 +13,15 @@ MonoBehaviour:
   m_Name: Red Squishy Liquid
   m_EditorClassIdentifier: 
   itemType: 0
+  baseDefenceStat: 0
+  fireDefenceStat: 0
+  waterDefenceStat: 0
+  grassDefenceStat: 0
+  baseAttackStat: 0
+  fireAttackStat: 0
+  waterAttackStat: 0
+  grassAttackStat: 0
   stackable: 1
-  image: {fileID: 21300000, guid: 1d0e8fc6984e2a141908fe03000c6a53, type: 3}
+  material: {fileID: 0}
+  display2DOutfit: {fileID: 0}
+  image: {fileID: 21300000, guid: d8ae197685d53a34e95d30a0c0bb7c8e, type: 3}

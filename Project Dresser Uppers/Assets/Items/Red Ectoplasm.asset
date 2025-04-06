@@ -24,4 +24,4 @@ MonoBehaviour:
   stackable: 1
   material: {fileID: 0}
   display2DOutfit: {fileID: 0}
-  image: {fileID: 21300000, guid: fe7eec850313f934bb82c92fb4eae6f0, type: 3}
+  image: {fileID: 21300000, guid: 23914c7b711580b4e9f27793d11fda5e, type: 3}

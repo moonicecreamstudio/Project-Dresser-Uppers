@@ -23,5 +23,5 @@ MonoBehaviour:
   grassAttackStat: 0
   stackable: 0
   material: {fileID: 2100000, guid: 24c6ed1c9174f654396d5cbe4f8580a4, type: 2}
-  display2DOutfit: {fileID: 21300000, guid: b77c1a5a44935d64da00cfeb0d8f805e, type: 3}
-  image: {fileID: 21300000, guid: 91dc435fbb96ca04bb1cb5dbfae2e736, type: 3}
+  display2DOutfit: {fileID: 21300000, guid: 43277b8405f043248a0e157050eef769, type: 3}
+  image: {fileID: 21300000, guid: bf45cf13c5e764449b7c41e87fe38604, type: 3}

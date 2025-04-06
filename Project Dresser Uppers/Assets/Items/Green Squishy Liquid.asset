@@ -13,5 +13,15 @@ MonoBehaviour:
   m_Name: Green Squishy Liquid
   m_EditorClassIdentifier: 
   itemType: 0
+  baseDefenceStat: 0
+  fireDefenceStat: 0
+  waterDefenceStat: 0
+  grassDefenceStat: 0
+  baseAttackStat: 0
+  fireAttackStat: 0
+  waterAttackStat: 0
+  grassAttackStat: 0
   stackable: 1
-  image: {fileID: 21300000, guid: c6e5fef1b5fee794380c67fad193b9e5, type: 3}
+  material: {fileID: 0}
+  display2DOutfit: {fileID: 0}
+  image: {fileID: 21300000, guid: 78d55d37862291d4b888dd76a1058644, type: 3}

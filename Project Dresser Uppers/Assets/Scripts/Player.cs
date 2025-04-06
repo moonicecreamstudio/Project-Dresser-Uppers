@@ -61,8 +61,7 @@ public class Player : MonoBehaviour
     public GameObject top2D;
     public GameObject bottom2D;
     public GameObject weapon2D;
-
-    
+    public GameObject bandages2D;
 
     [System.Serializable]
 
@@ -161,6 +160,8 @@ public class Player : MonoBehaviour
                 body2D.GetComponent<SpriteRenderer>().enabled = false;
                 top2D.GetComponent<SpriteRenderer>().enabled = false;
                 bottom2D.GetComponent<SpriteRenderer>().enabled = false;
+                bandages2D.GetComponent<SpriteRenderer>().enabled = false;
+                weapon2D.GetComponent<SpriteRenderer>().enabled = false;
                 PlayerDeath();
                 hasDied = true;
             }
@@ -181,6 +182,8 @@ public class Player : MonoBehaviour
                 body2D.GetComponent<SpriteRenderer>().enabled = true;
                 top2D.GetComponent<SpriteRenderer>().enabled = true;
                 bottom2D.GetComponent<SpriteRenderer>().enabled = true;
+                bandages2D.GetComponent<SpriteRenderer>().enabled = true;
+                weapon2D.GetComponent<SpriteRenderer>().enabled = true;
             }
         }
 
