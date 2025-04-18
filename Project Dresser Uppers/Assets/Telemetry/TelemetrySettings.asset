@@ -16,7 +16,7 @@ MonoBehaviour:
   secret: fascinated sheriff
   _version: PlaytestV1.0
   _serverURL: https://telemetry-js-792bae8f0c9a.herokuapp.com/
-  serverCommunication: 1
+  serverCommunication: 0
   debugLogging: 0
   <SetupId>k__BackingField: XPC > Project Dresser Uppers / Project Dresser Uppers
     @ calvi-980300689
